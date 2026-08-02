@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==========================================================
+     EDITE ESTAS 4 LINHAS À MÃO (buscadores leem antes do JS)
+     ========================================================== -->
+<title>{{EMPRESA}} — Síndico Profissional em {{CIDADE}}</title>
+<meta name="description" content="Síndico profissional em {{CIDADE}}. Prestação de contas todo mês, redução de inadimplência e gestão transparente de condomínios. Diagnóstico gratuito do seu prédio.">
+<meta property="og:title" content="{{EMPRESA}} — Síndico Profissional em {{CIDADE}}">
+<meta property="og:description" content="Gestão condominial transparente. Diagnóstico gratuito do balancete, da convenção e dos contratos do seu condomínio.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14314F">
+
+<style>
+/* =============================================================
+   {{EMPRESA}} — identidade "planta e balancete"
+   Azul de prancheta técnica sobre papel de razão contábil,
+   latão das ferragens prediais como acento. Grotesca nos
+   títulos, serifada no texto, monoespaçada nos rótulos.
+   ============================================================= */
+
+:root {
+  --paper:      #F1F2EF;
+  --sheet:      #FBFBFA;
+  --ink:        #14181C;
+  --ink-soft:   #4E5A63;
+  --ink-faint:  #7E8A92;
+  --rule:       #D8DCDA;
+  --rule-soft:  #E7EAE7;
+  --deep:       #14314F;
+  --deep-2:     #0E2438;
+  --blue:       #1B3A5C;
+  --blue-lift:  #2C6094;
+  --brass:      #9C6B2F;
+  --brass-lift: #C08A45;
+  --brass-soft: #F0E3D0;
+  --on-deep:    #EDEFEC;
+  --on-deep-2:  #A9B9C8;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --shadow: 0 1px 2px rgba(20,24,28,.05), 0 10px 30px rgba(20,24,28,.07);
+  --gut: clamp(20px, 5vw, 48px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:#0F1317; --sheet:#161B20; --ink:#E9ECED; --ink-soft:#A4AFB7;
+    --ink-faint:#6E7A83; --rule:#2A3239; --rule-soft:#202830;
+    --deep:#0B1219; --deep-2:#070C11; --blue:#7FB0DC; --blue-lift:#A6CBEC;
+    --brass:#D3A468; --brass-lift:#E3BC8B; --brass-soft:#332A1D;
+    --on-deep:#E9ECED; --on-deep-2:#93A2AF;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 12px 32px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"] {
+  --paper:#0F1317; --sheet:#161B20; --ink:#E9ECED; --ink-soft:#A4AFB7;
+  --ink-faint:#6E7A83; --rule:#2A3239; --rule-soft:#202830;
+  --deep:#0B1219; --deep-2:#070C11; --blue:#7FB0DC; --blue-lift:#A6CBEC;
+  --brass:#D3A468; --brass-lift:#E3BC8B; --brass-soft:#332A1D;
+  --on-deep:#E9ECED; --on-deep-2:#93A2AF;
+  --shadow: 0 1px 2px rgba(0,0,0,.45), 0 12px 32px rgba(0,0,0,.4);
+}
+:root[data-theme="light"] {
+  --paper:#F1F2EF; --sheet:#FBFBFA; --ink:#14181C; --ink-soft:#4E5A63;
+  --ink-faint:#7E8A92; --rule:#D8DCDA; --rule-soft:#E7EAE7;
+  --deep:#14314F; --deep-2:#0E2438; --blue:#1B3A5C; --blue-lift:#2C6094;
+  --brass:#9C6B2F; --brass-lift:#C08A45; --brass-soft:#F0E3D0;
+  --on-deep:#EDEFEC; --on-deep-2:#A9B9C8;
+  --shadow: 0 1px 2px rgba(20,24,28,.05), 0 10px 30px rgba(20,24,28,.07);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -.024em;
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0;
+}
+p { margin: 0 0 1em; }
+a { color: var(--blue-lift); }
+
+:focus-visible {
+  outline: 2px solid var(--brass-lift);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--gut); }
+.narrow { max-width: 66ch; }
+
+.lbl {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-faint);
+}
+
+/* ---------- botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  letter-spacing: -.012em;
+  padding: 14px 24px; border-radius: 3px;
+  border: 1px solid transparent;
+  text-decoration: none; cursor: pointer;
+  transition: transform .12s ease, background-color .12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-zap { background: var(--brass); color: var(--paper); }
+.btn-zap:hover { background: var(--brass-lift); }
+.btn-ghost { border-color: currentColor; color: var(--on-deep); background: transparent; }
+.btn-ink { background: var(--blue); color: var(--paper); }
+.btn-ink:hover { background: var(--blue-lift); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover { transform: none; }
+}
+
+/* ---------- topo ---------- */
+.top {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 62px; }
+.brand {
+  font-family: var(--sans); font-weight: 700; font-size: 16px;
+  letter-spacing: -.02em; text-decoration: none; color: var(--ink);
+  display: flex; align-items: baseline; gap: 9px;
+}
+.brand small {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-faint); font-weight: 500;
+}
+.top nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+.top nav a {
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  color: var(--ink-soft); text-decoration: none;
+}
+.top nav a:hover { color: var(--ink); }
+.top .btn { padding: 9px 16px; font-size: 13.5px; }
+@media (max-width: 780px) { .top nav a.hide-sm { display: none; } }
+
+/* ---------- hero ---------- */
+.hero {
+  background: var(--deep);
+  color: var(--on-deep);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+}
+/* malha de papel milimetrado, como prancheta técnica */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(120% 90% at 78% 15%, #000 0%, transparent 72%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; padding-block: clamp(60px, 11vw, 108px) clamp(52px, 9vw, 92px); }
+.hero .lbl { color: var(--brass-lift); }
+.hero h1 {
+  font-size: clamp(2.4rem, 6.6vw, 4.5rem);
+  max-width: 17ch;
+  margin: 18px 0 24px;
+  color: var(--on-deep);
+}
+.hero .sub {
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: var(--on-deep-2);
+  max-width: 52ch;
+  margin-bottom: 34px;
+}
+.hero .acts { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.hero .fine {
+  margin: 22px 0 0; font-family: var(--mono); font-size: 11.5px;
+  letter-spacing: .06em; color: var(--on-deep-2);
+}
+
+.figures {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border-top: 1px solid rgba(255,255,255,.16);
+  margin-top: 52px;
+}
+.figures div { padding: 20px 22px 20px 0; border-right: 1px solid rgba(255,255,255,.16); }
+.figures div:last-child { border-right: 0; }
+.figures strong {
+  display: block; font-family: var(--sans); font-size: 1.75rem; font-weight: 700;
+  letter-spacing: -.03em; color: var(--on-deep); font-variant-numeric: tabular-nums;
+  margin-bottom: 2px;
+}
+.figures span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--on-deep-2); }
+
+/* ---------- seções ---------- */
+section { padding-block: clamp(56px, 8vw, 92px); }
+section.alt { background: var(--sheet); border-block: 1px solid var(--rule); }
+
+.shead { margin-bottom: 40px; }
+.shead h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); max-width: 20ch; margin: 12px 0 14px; }
+.shead p { color: var(--ink-soft); max-width: 58ch; margin: 0; }
+
+/* ---------- sinais ---------- */
+.signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.signals article { background: var(--paper); padding: 26px 24px; }
+.signals .n {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+  color: var(--brass); display: block; margin-bottom: 12px;
+}
+.signals h3 { font-size: 1.06rem; margin-bottom: 8px; }
+.signals p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
+
+/* ---------- serviços ---------- */
+.svc { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 34px 40px; }
+.svc article { border-top: 2px solid var(--blue); padding-top: 18px; }
+.svc h3 { font-size: 1.14rem; margin-bottom: 9px; }
+.svc p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 12px; }
+.svc ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: .92rem; }
+.svc li { margin-bottom: 4px; }
+
+/* ---------- processo ---------- */
+.steps { counter-reset: s; display: grid; gap: 0; }
+.steps li {
+  list-style: none; counter-increment: s;
+  display: grid; grid-template-columns: 62px 1fr; gap: 22px;
+  padding: 24px 0; border-bottom: 1px solid var(--rule);
+}
+.steps li:last-child { border-bottom: 0; }
+.steps li::before {
+  content: counter(s, decimal-leading-zero);
+  font-family: var(--mono); font-size: 13px; letter-spacing: .08em;
+  color: var(--brass); padding-top: 4px;
+}
+.steps h3 { font-size: 1.16rem; margin-bottom: 6px; }
+.steps p { margin: 0; color: var(--ink-soft); }
+@media (max-width: 560px) { .steps li { grid-template-columns: 40px 1fr; gap: 14px; } }
+
+/* ---------- oferta + formulário ---------- */
+.offer { background: var(--deep-2); color: var(--on-deep); }
+.offer h2, .offer h3 { color: var(--on-deep); }
+.offer .lbl { color: var(--brass-lift); }
+.offer .grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 56px; align-items: start; }
+@media (max-width: 900px) { .offer .grid { grid-template-columns: 1fr; gap: 40px; } }
+.offer .shead p, .offer li { color: var(--on-deep-2); }
+.offer h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); margin: 12px 0 16px; }
+.offer .deliver { list-style: none; padding: 0; margin: 24px 0 0; }
+.offer .deliver li {
+  padding: 11px 0 11px 28px; border-bottom: 1px solid rgba(255,255,255,.13);
+  position: relative; font-size: .97rem;
+}
+.offer .deliver li::before {
+  content: "→"; position: absolute; left: 0; color: var(--brass-lift);
+  font-family: var(--mono);
+}
+.offer .promise {
+  margin-top: 26px; padding: 16px 18px; border-left: 2px solid var(--brass-lift);
+  font-size: .96rem; color: var(--on-deep);
+}
+
+form { background: var(--sheet); color: var(--ink); border-radius: 4px; padding: 28px; box-shadow: var(--shadow); }
+form h3 { font-size: 1.22rem; margin-bottom: 6px; }
+form > p { color: var(--ink-soft); font-size: .93rem; margin-bottom: 20px; }
+.field { display: block; margin-bottom: 16px; }
+.field span {
+  display: block; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+.field input, .field select, .field textarea {
+  width: 100%; font-family: var(--serif); font-size: 16px;
+  padding: 11px 13px; border: 1px solid var(--rule); border-radius: 3px;
+  background: var(--paper); color: var(--ink);
+}
+.field textarea { resize: vertical; min-height: 82px; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue-lift); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 460px) { .row { grid-template-columns: 1fr; gap: 0; } }
+form .btn { width: 100%; justify-content: center; margin-top: 6px; }
+form .fine { font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; color: var(--ink-faint); margin: 14px 0 0; text-align: center; line-height: 1.5; }
+
+/* ---------- depoimentos ---------- */
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.quotes figure {
+  margin: 0; background: var(--paper); border: 1px solid var(--rule);
+  border-left: 2px solid var(--brass); padding: 24px 24px 20px;
+}
+.quotes blockquote { margin: 0 0 14px; font-size: 1.02rem; }
+.quotes figcaption { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+.placeholder-note {
+  margin-top: 22px; font-family: var(--mono); font-size: 11.5px;
+  letter-spacing: .04em; color: var(--brass); line-height: 1.6;
+}
+
+/* ---------- faq ---------- */
+.faq { border-top: 1px solid var(--rule); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 20px 34px 20px 0;
+  font-family: var(--sans); font-weight: 700; font-size: 1.06rem;
+  letter-spacing: -.015em; position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 4px; top: 18px;
+  font-family: var(--mono); font-size: 20px; color: var(--brass); font-weight: 400;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq .body { padding: 0 0 22px; color: var(--ink-soft); max-width: 68ch; }
+.faq .body p:last-child { margin-bottom: 0; }
+
+/* ---------- rodapé ---------- */
+footer { background: var(--deep); color: var(--on-deep-2); padding-block: 52px 34px; }
+footer .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 32px; }
+footer h4 { font-size: .95rem; color: var(--on-deep); margin-bottom: 10px; }
+footer a { color: var(--on-deep); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer ul { list-style: none; margin: 0; padding: 0; font-size: .93rem; }
+footer li { margin-bottom: 6px; }
+footer .base {
+  margin-top: 38px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .05em; line-height: 1.7;
+}
+
+/* ---------- botão flutuante whatsapp ---------- */
+.float {
+  position: fixed; right: 18px; bottom: 18px; z-index: 40;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+@media (min-width: 900px) { .float { display: none; } }
+</style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo">{{EMPRESA}} <small>Síndico Profissional</small></a>
+    <nav>
+      <a class="hide-sm" href="#servicos">Serviços</a>
+      <a class="hide-sm" href="#processo">Como funciona</a>
+      <a class="hide-sm" href="#duvidas">Dúvidas</a>
+      <a class="btn btn-ink" href="#diagnostico">Diagnóstico gratuito</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="lbl">Gestão condominial em {{CIDADE}}</span>
+      <h1>Seu condomínio não precisa de sorte. Precisa de contas em dia.</h1>
+      <p class="sub">
+        Assumo a gestão do seu prédio com prestação de contas em data fixa, contratos revisados
+        e inadimplência tratada antes de virar processo. Se algo estiver errado, você fica sabendo
+        por mim — não pela assembleia.
+      </p>
+      <div class="acts">
+        <a class="btn btn-zap" href="#diagnostico">Quero o diagnóstico gratuito</a>
+        <a class="btn btn-ghost" data-zap href="#">Falar no WhatsApp</a>
+      </div>
+      <p class="fine">Atendo {{REGIAO}} · Resposta em até 1 hora no horário comercial</p>
+
+      <div class="figures">
+        <div><strong>{{ANOS}}</strong><span>anos de atuação</span></div>
+        <div><strong>{{QTD_CONDOMINIOS}}</strong><span>condomínios geridos</span></div>
+        <div><strong>Dia 5</strong><span>prestação de contas</span></div>
+        <div><strong>0</strong><span>comissão de fornecedor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SINAIS ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <span class="lbl">Para quem é</span>
+        <h2>Se três destes sinais aparecem no seu prédio, o problema não é dinheiro. É gestão.</h2>
+        <p>São os pontos que eu mais encontro nos condomínios que assumo — e nenhum deles se resolve com chamada extra.</p>
+      </div>
+
+      <div class="signals">
+        <article>
+          <span class="n">01</span>
+          <h3>A prestação de contas não sai todo mês</h3>
+          <p>Ou sai só quando alguém cobra. Contas fora de rotina viram contas fora de controle.</p>
+        </article>
+        <article>
+          <span class="n">02</span>
+          <h3>Chamada extra virou hábito</h3>
+          <p>Deveria ser exceção. Se aparece todo ano, o problema é planejamento — não é imprevisto.</p>
+        </article>
+        <article>
+          <span class="n">03</span>
+          <h3>Ninguém sabe quais contratos estão vigentes</h3>
+          <p>Elevador, limpeza, jardim, dedetização. Sem controle de vencimento, alguém está sendo pago à toa.</p>
+        </article>
+        <article>
+          <span class="n">04</span>
+          <h3>A inadimplência passou de 10%</h3>
+          <p>Quem paga em dia está bancando quem não paga. Isso corrói o caixa e a paciência do prédio.</p>
+        </article>
+        <article>
+          <span class="n">05</span>
+          <h3>Laudos e AVCB vencidos</h3>
+          <p>Sem laudo em dia, o seguro nega o sinistro. Descobrir isso no dia do acidente é o pior cenário.</p>
+        </article>
+        <article>
+          <span class="n">06</span>
+          <h3>O síndico atual quer sair e ninguém quer o cargo</h3>
+          <p>Esse é o sinal mais claro de todos: o cargo virou um problema, não uma honra.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="alt" id="servicos">
+    <div class="wrap">
+      <div class="shead">
+        <span class="lbl">O que está incluso</span>
+        <h2>Seis frentes, todas no mesmo contrato</h2>
+        <p>O que não estiver aqui eu digo que não está — antes de você assinar, não depois.</p>
+      </div>
+
+      <div class="svc">
+        <article>
+          <h3>Gestão administrativa</h3>
+          <p>A parte que trava quando falta método.</p>
+          <ul>
+            <li>Convocação e condução de assembleias</li>
+            <li>Redação e registro de atas</li>
+            <li>Aplicação da convenção e do regimento</li>
+            <li>Advertências e multas conforme previsto</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Gestão financeira</h3>
+          <p>Onde a confiança se ganha ou se perde.</p>
+          <ul>
+            <li>Balancete mensal em data fixa</li>
+            <li>Contas a pagar e a receber</li>
+            <li>Previsão orçamentária anual</li>
+            <li>Fundo de reserva em conta apartada</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Cobrança e inadimplência</h3>
+          <p>Negociação antes do jurídico, sempre.</p>
+          <ul>
+            <li>Contato individual com cada devedor</li>
+            <li>Acordos formalizados por escrito</li>
+            <li>Facilitação do pagamento (Pix e lembretes)</li>
+            <li>Ação judicial só para quem não negocia</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Manutenção e segurança</h3>
+          <p>O trabalho que só aparece quando falta.</p>
+          <ul>
+            <li>Calendário de manutenções obrigatórias</li>
+            <li>Controle de laudos, AVCB e seguros</li>
+            <li>Vistorias periódicas documentadas</li>
+            <li>Gestão dos contratos de manutenção</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Pessoas</h3>
+          <p>Equipe própria ou terceirizada.</p>
+          <ul>
+            <li>Folha, encargos e provisões</li>
+            <li>Escalas, férias e substituições</li>
+            <li>Fiscalização das empresas terceirizadas</li>
+            <li>Treinamento e rotina de portaria</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Obras</h3>
+          <p>Do orçamento ao relatório final.</p>
+          <ul>
+            <li>Cotação com escopo técnico igual para todos</li>
+            <li>Conferência de CNPJ, ART e seguro</li>
+            <li>Acompanhamento de execução</li>
+            <li>Relatório fotográfico para os condôminos</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO ============ -->
+  <section id="processo">
+    <div class="wrap">
+      <div class="shead">
+        <span class="lbl">Como funciona</span>
+        <h2>Do primeiro contato à primeira assembleia</h2>
+        <p>Sem etapa surpresa e sem “depois eu te explico”.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Diagnóstico gratuito</h3>
+            <p>Analiso os balancetes dos últimos 12 meses, a convenção e os contratos vigentes. Devolvo um relatório com o que está errado — e ele é seu, mesmo que você não me contrate.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Proposta por escrito</h3>
+            <p>Escopo detalhado, honorário fixo e prazos. O que é serviço extra está identificado como extra, com o valor ao lado.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Reunião com o conselho</h3>
+            <p>Presencial ou por vídeo. Levo o contrato modelo e o contato de conselhos de condomínios que já administro, para vocês perguntarem o que quiserem.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Assembleia</h3>
+            <p>Ajudo a redigir o edital com a pauta correta, vou à assembleia, me apresento aos condôminos e respondo às perguntas — inclusive as difíceis. Não assumo nada sem aprovação formal.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Transição</h3>
+            <p>Levantamento de contratos, funcionários, laudos, processos e saldos. Tudo inventariado e entregue ao conselho antes de eu tocar em qualquer coisa.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Rotina</h3>
+            <p>Prestação de contas na mesma data todo mês, disponível para qualquer condômino. Reunião com o conselho e vistoria periódica.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA + FORMULÁRIO ============ -->
+  <section class="offer" id="diagnostico">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="shead">
+            <span class="lbl">Sem custo e sem compromisso</span>
+            <h2>Diagnóstico gratuito do seu condomínio</h2>
+            <p>Você me envia os balancetes dos últimos 12 meses, a convenção e a lista de contratos vigentes. Em até 5 dias úteis eu devolvo um relatório.</p>
+          </div>
+
+          <ul class="deliver">
+            <li>Onde o prédio gasta acima do praticado na região</li>
+            <li>Contratos com reajuste ou escopo em desacordo</li>
+            <li>Obrigações legais e laudos em atraso</li>
+            <li>Situação da inadimplência e o caminho para tratá-la</li>
+            <li>Três ações práticas para começar este mês</li>
+          </ul>
+
+          <p class="promise">
+            <strong>O relatório é seu de qualquer jeito.</strong> Pode usar com o síndico atual,
+            com o conselho ou com outro profissional. Faço assim porque, na maioria dos casos,
+            o próprio relatório mostra o tamanho do problema melhor do que qualquer proposta minha.
+          </p>
+        </div>
+
+        <form id="form-diagnostico" novalidate>
+          <h3>Pedir o diagnóstico</h3>
+          <p>Preencha e o pedido segue direto para o meu WhatsApp, já organizado.</p>
+
+          <label class="field">
+            <span>Seu nome</span>
+            <input type="text" name="nome" autocomplete="name" required>
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span>Nº de unidades</span>
+              <input type="text" name="unidades" inputmode="numeric" placeholder="ex.: 48">
+            </label>
+            <label class="field">
+              <span>Bairro / cidade</span>
+              <input type="text" name="local" autocomplete="address-level2">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Seu papel no condomínio</span>
+            <select name="papel">
+              <option>Conselheiro fiscal</option>
+              <option>Síndico morador</option>
+              <option>Morador / condômino</option>
+              <option>Administradora ou imobiliária</option>
+              <option>Outro</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Principal dor hoje</span>
+            <select name="dor">
+              <option>Contas e prestação de contas</option>
+              <option>Inadimplência</option>
+              <option>Obra ou manutenção</option>
+              <option>Conflito entre moradores</option>
+              <option>Troca de síndico</option>
+              <option>Ainda não sei dizer</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Quer contar mais alguma coisa? (opcional)</span>
+            <textarea name="obs" rows="3"></textarea>
+          </label>
+
+          <button class="btn btn-zap" type="submit">Enviar pelo WhatsApp</button>
+          <p class="fine">Nada é salvo neste site. Os dados vão apenas para a conversa que abre no seu WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <span class="lbl">Quem já trabalhou comigo</span>
+        <h2>Referência é o melhor argumento que eu tenho</h2>
+        <p>Posso conectar você diretamente com o conselho fiscal de condomínios que administro, antes de qualquer decisão.</p>
+      </div>
+
+      <div class="quotes">
+        <figure>
+          <blockquote>[ Espaço reservado para depoimento real. Peça ao conselho um parágrafo curto sobre o que mudou na gestão. ]</blockquote>
+          <figcaption>Conselho fiscal · condomínio de XX unidades</figcaption>
+        </figure>
+        <figure>
+          <blockquote>[ Espaço reservado. Depoimentos que citam um número concreto — prazo, contrato renegociado, laudo regularizado — convencem mais que elogio genérico. ]</blockquote>
+          <figcaption>Síndico anterior · {{REGIAO}}</figcaption>
+        </figure>
+        <figure>
+          <blockquote>[ Espaço reservado. Se ainda não tiver três, publique um só: um depoimento verdadeiro vale mais que três inventados. ]</blockquote>
+          <figcaption>Condômino · condomínio de XX unidades</figcaption>
+        </figure>
+      </div>
+
+      <p class="placeholder-note">
+        ⚠ Substitua os três blocos acima por depoimentos reais e obtenha autorização por escrito
+        antes de publicar nome, condomínio ou foto. Depoimento fabricado é propaganda enganosa —
+        e o público que decide sua contratação é justamente o treinado para checar.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="alt" id="duvidas">
+    <div class="wrap narrow">
+      <div class="shead">
+        <span class="lbl">Dúvidas frequentes</span>
+        <h2>As perguntas que eu mais recebo</h2>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Quanto custa?</summary>
+          <div class="body">
+            <p>O honorário varia com três coisas: número de unidades, se o condomínio tem funcionário próprio — isso muda bastante o volume de trabalho — e a complexidade do momento, como obra em andamento, processo judicial ou inadimplência alta.</p>
+            <p>Prefiro dar a faixa antes da reunião, para não tomar o tempo de ninguém à toa. Me chame no WhatsApp com o número de unidades e eu respondo com a faixa na hora.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Síndico profissional substitui a administradora?</summary>
+          <div class="body">
+            <p>Não, são funções diferentes e complementares. A administradora processa: folha, boletos, contabilidade, obrigações acessórias. O síndico é quem <em>decide e responde</em> — representa o condomínio, conduz assembleias, aplica a convenção e presta contas.</p>
+            <p>Trabalho com a administradora que o condomínio já tem. Se fizer sentido trocar, isso vai no relatório com a justificativa — mas é decisão da assembleia, não minha.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>O mandato do síndico atual não acabou. Dá para trocar?</summary>
+          <div class="body">
+            <p>Dá. Se o mandato está perto do fim, a gente se prepara para a assembleia de eleição. Se está no meio, existe o procedimento de destituição previsto na convenção — que exige fundamento documentado, convocação com pauta específica e quórum próprio.</p>
+            <p>O primeiro passo é simples: me envie a convenção do seu condomínio. Eu leio e digo exatamente qual é o caminho no seu caso, sem custo.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Você recebe comissão de fornecedor?</summary>
+          <div class="body">
+            <p>Não, e essa é a pergunta mais importante desta lista. Síndico que recebe comissão de empresa de elevador, de obra ou de portaria não tem como negociar preço a favor do condomínio — os interesses são opostos.</p>
+            <p>Minha única remuneração é o honorário pago pelo condomínio, e isso está escrito no contrato. Faça essa pergunta a qualquer profissional que você avaliar, e peça a resposta por escrito.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Você não mora aqui. Como fica a presença?</summary>
+          <div class="body">
+            <p>Presença é cláusula de contrato: número de visitas presenciais por mês, horário definido de atendimento aos moradores e disponibilidade para emergência fora do expediente.</p>
+            <p>E há o outro lado: o síndico morador precisa cobrar o vizinho que encontra no elevador e multar o amigo do churrasco. Ele não faz — não por má índole, por convivência. Isenção é o que não dá para improvisar.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>E se o condomínio não gostar do meu trabalho?</summary>
+          <div class="body">
+            <p>O contrato prevê aviso prévio para os dois lados e prazo para eu devolver toda a documentação organizada: contratos, senhas, laudos, extratos e processos.</p>
+            <p>Essa cláusula existe justamente porque a saída mal feita é o que mais prejudica um condomínio. Já vi prédio ficar dois meses sem conseguir movimentar a própria conta bancária.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Vocês atendem condomínio pequeno?</summary>
+          <div class="body">
+            <p>Sim. Prédio pequeno costuma ter menos margem para erro — uma inadimplência de duas unidades já compromete o caixa do mês.</p>
+            <p>O escopo e o honorário são dimensionados pelo porte. Me diga o número de unidades e eu digo com franqueza se faz sentido para vocês.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FECHAMENTO ============ -->
+  <section class="offer">
+    <div class="wrap narrow" style="text-align:center">
+      <span class="lbl">Próximo passo</span>
+      <h2 style="margin:14px auto 16px;max-width:18ch">Comece pelo diagnóstico. Decidir vem depois.</h2>
+      <p style="color:var(--on-deep-2);margin-bottom:28px">
+        Uma conversa de vinte minutos costuma bastar para saber se faz sentido continuarmos.
+        E se não fizer, eu digo isso também.
+      </p>
+      <a class="btn btn-zap" data-zap href="#">Falar com {{RESPONSAVEL}} no WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>{{EMPRESA}}</h4>
+        <ul>
+          <li>Síndico profissional</li>
+          <li>{{FORMACAO}}</li>
+          <li>{{CIDADE}} — {{REGIAO}}</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a data-zap href="#">WhatsApp {{WHATSAPP}}</a></li>
+          <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+          <li><a href="https://instagram.com/{{INSTAGRAM}}" rel="noopener">Instagram {{INSTAGRAM}}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#processo">Como funciona</a></li>
+          <li><a href="#diagnostico">Diagnóstico gratuito</a></li>
+          <li><a href="#duvidas">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="base">
+      © <span id="ano">2026</span> {{EMPRESA}} · CNPJ {{CNPJ}}<br>
+      Este site não coleta nem armazena dados: o formulário apenas monta uma mensagem no seu WhatsApp.<br>
+      O conteúdo sobre assembleias, quóruns e prazos é informativo — cada caso depende da convenção do condomínio.
+    </p>
+  </div>
+</footer>
+
+<a class="btn btn-zap float" data-zap href="#">WhatsApp</a>
+
+<script>
+/* =============================================================
+   CONFIGURAÇÃO — edite só este bloco.
+   Os valores substituem os marcadores {{...}} em toda a página.
+   ============================================================= */
+const DADOS = {
+  EMPRESA:          "{{EMPRESA}}",
+  RESPONSAVEL:      "{{RESPONSAVEL}}",
+  CIDADE:           "{{CIDADE}}",
+  REGIAO:           "{{REGIAO}}",
+  WHATSAPP:         "{{WHATSAPP}}",       // só dígitos com DDD, ex.: "11987654321"
+  EMAIL:            "{{EMAIL}}",
+  INSTAGRAM:        "{{INSTAGRAM}}",      // sem @
+  ANOS:             "{{ANOS}}",
+  QTD_CONDOMINIOS:  "{{QTD_CONDOMINIOS}}",
+  FORMACAO:         "{{FORMACAO}}",
+  CNPJ:             "{{CNPJ}}"
+};
+
+/* ---- substitui os marcadores no texto e nos atributos ---- */
+(function preencher() {
+  const re = /\{\{(\w+)\}\}/g;
+  const troca = (s) => s.replace(re, (m, k) => (DADOS[k] && !/^\{\{/.test(DADOS[k]) ? DADOS[k] : m));
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const alvos = [];
+  while (walker.nextNode()) if (re.test(walker.currentNode.nodeValue)) alvos.push(walker.currentNode);
+  alvos.forEach(n => { n.nodeValue = troca(n.nodeValue); });
+
+  document.querySelectorAll("[href], [content]").forEach(el => {
+    ["href", "content"].forEach(attr => {
+      const v = el.getAttribute(attr);
+      if (v && v.includes("{{")) el.setAttribute(attr, troca(v));
+    });
+  });
+  document.title = troca(document.title);
+})();
+
+/* ---- link do WhatsApp com mensagem pronta ---- */
+const numero = DADOS.WHATSAPP.replace(/\D/g, "");
+const zapBase = "https://wa.me/55" + numero + "?text=";
+const saudacao = "Olá! Vim pelo site e quero saber sobre a gestão do meu condomínio.";
+
+document.querySelectorAll("[data-zap]").forEach(a => {
+  a.href = numero ? zapBase + encodeURIComponent(saudacao) : "#diagnostico";
+  if (numero) { a.target = "_blank"; a.rel = "noopener"; }
+});
+
+/* ---- formulário monta a mensagem e abre o WhatsApp ---- */
+document.getElementById("form-diagnostico").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const d = new FormData(this);
+  const nome = (d.get("nome") || "").trim();
+
+  if (!nome) {
+    this.querySelector("[name=nome]").focus();
+    return;
+  }
+  if (!numero) {
+    alert("Preencha o campo WHATSAPP no bloco DADOS, dentro do arquivo index.html.");
+    return;
+  }
+
+  const linhas = [
+    "Olá! Quero pedir o diagnóstico gratuito do condomínio.",
+    "",
+    "Nome: " + nome,
+    "Unidades: " + ((d.get("unidades") || "").trim() || "não informado"),
+    "Local: " + ((d.get("local") || "").trim() || "não informado"),
+    "Sou: " + d.get("papel"),
+    "Principal dor: " + d.get("dor")
+  ];
+  const obs = (d.get("obs") || "").trim();
+  if (obs) linhas.push("", "Observações: " + obs);
+
+  window.open(zapBase + encodeURIComponent(linhas.join("\n")), "_blank", "noopener");
+});
+
+/* ---- ano do rodapé ---- */
+document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
