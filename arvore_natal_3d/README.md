@@ -5,27 +5,28 @@ Nomes empilhados em forma de árvore, alternando verde e vermelho, com "FELIZ NA
 Cada nome é uma peça única: letras grossas presas por uma barra em cima e outra embaixo.
 
 Larguras e alturas de cada bloco medidas na foto de referência (de baixo para cima: 150/115/99/75/54 mm
-de largura; 42,3/43,3/20,8/28,2/25,4 mm de altura com as barras de 2,5 mm; FELIZ NATAL 70 x 13 mm).
-CAMILA embaixo fica quase natural como BRUNNO; os nomes curtos alargam até 50% para preencher o andar.
+de largura; blocos de 42,3/43,3/20,8/28,2/25,4 mm; FELIZ NATAL 70 x 13 mm). Como na foto, a placa de baixo
+de cada bloco é grossa (4–5 mm) e a barra de cima fina (2–2,5 mm); as letras ficam encostadas (vão de 6% da
+altura) e alargadas em relação à Impact pura (na foto ~1,2x; aqui 1,2x a 1,4x, porque os nomes são mais curtos).
 
 Duas variantes:
 - **EDUARDO** (`out/`, oficial): CAMILA, THEO, EDUARDO, NINA, MAX. EDUARDO (7 letras) faz o andar baixo do
-  meio como VALENTINA e todas as alturas ficam iguais às da foto. Árvore: 150 x 173 mm.
+  meio como VALENTINA. Só o 3º e o 4º andares ficam 2 mm mais altos que na foto. Árvore: 150 x 177 mm.
 - **EDU** (`out_edu/`): CAMILA, THEO, NINA, MAX, EDU. O 3º andar (NINA, 4 letras) fica com 30,5 mm em vez dos
   20,8 mm da VALENTINA. Árvore: 150 x 183 mm.
 
 `comparar.png` mostra foto e modelo na mesma escala; `comparar_eduardo.png` compara as duas variantes com a foto.
-O que não dá para igualar: os nomes da foto têm o número certo de letras para preencher cada andar com a
-Impact natural; THEO, EDUARDO e NINA são mais curtos e saem 27–43% mais largos para fechar a largura.
+O que não dá para igualar: os nomes da foto têm o número certo de letras para encher cada andar com 1,2x de
+alargamento; THEO e NINA são mais curtos e saem com 1,4x.
 
 | Peça        | EDUARDO (cor, L x A mm)     | EDU (cor, L x A mm)      |
 |-------------|--------------------------|-----------------------------|
-| pé          | FELIZ NATAL verm. 68 x 13   | FELIZ NATAL verm. 68 x 13 |
+| pé          | FELIZ NATAL verm. 70 x 13   | FELIZ NATAL verm. 70 x 13 |
 | 1º andar    | CAMILA verde 149 x 42       | CAMILA verde 149 x 42    |
-| 2º andar    | THEO verm. 113 x 43         | THEO verm. 113 x 43      |
-| 3º andar    | EDUARDO verde 96 x 21       | NINA verde 96 x 30,5     |
-| 4º andar    | NINA verm. 73 x 28          | MAX verm. 73 x 28        |
-| 5º andar    | MAX verde 53 x 25,5         | EDU verde 52 x 25,5      |
+| 2º andar    | THEO verm. 114 x 43         | THEO verm. 114 x 43      |
+| 3º andar    | EDUARDO verde 98 x 23       | NINA verde 96 x 30,5     |
+| 4º andar    | NINA verm. 74 x 30          | MAX verm. 74 x 28        |
+| 5º andar    | MAX verde 54 x 25,5         | EDU verde 53 x 25,5      |
 
 Profundidade de todas as peças: 25 mm.
 

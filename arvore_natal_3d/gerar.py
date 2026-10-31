@@ -28,13 +28,15 @@ if VARIANTE == "edu":
     ALT_MAX = [42.3, 43.3, 30.5, 28.2, 25.4]  # altura de cada andar com as barras (mm)
 else:
     ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("EDUARDO", VERDE), ("NINA", VERMELHO), ("MAX", VERDE)]
-    ALT_MAX = [42.3, 43.3, 20.8, 28.2, 25.4]  # altura de cada andar com as barras (mm) = foto
+    ALT_MAX = [42.3, 43.3, 23.0, 30.0, 25.4]  # altura de cada andar com as barras (mm); foto: 42,3/43,3/20,8/28,2/25,4
+# placa de baixo mais grossa que a barra de cima, como na foto (EMILY: ~5 mm embaixo, ~2,5 mm em cima)
+BARRAS = [(5.0, 2.5), (5.0, 2.5), (3.0, 2.0), (4.0, 2.5), (4.0, 2.5)]  # (baixo, cima) por andar, de baixo para cima
 LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
-ALARGA_MAX = 1.5  # letras alargam no máximo 50% para preencher o andar
+ALARGA_MAX = 1.6  # letras alargam o que for preciso para preencher o andar (na foto ~1,2-1,3)
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.0                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
-ESPACO = 0.09                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
+ESPACO = 0.06                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
 
 font = TTFont(FONT)
 gs = font.getGlyphSet()
@@ -125,7 +127,7 @@ def scale(geom, f):
     return affinity.scale(geom, f, f, origin=(0, 0))
 
 
-RAIO = 0.9  # raio do arredondamento das quinas (mm)
+RAIO = 0.6  # raio do arredondamento das quinas (mm)
 
 
 def extrude(geom, h, z0=0.0, raio=RAIO, passos=6):
@@ -155,7 +157,7 @@ def extrude(geom, h, z0=0.0, raio=RAIO, passos=6):
 PERFIS = {}
 
 
-def contorno_pontas(letras, W, H, b, n=200):
+def contorno_pontas(letras, W, H, b, bc=None, n=200):
     """Silhueta lateral da palavra, como na foto: o lado esquerdo segue o contorno da
     1ª letra e o direito o da última (B reto, O arredondado, A/Y inclinado); nas
     alturas das barras vale a largura da letra onde ela encosta na barra, então a
@@ -167,7 +169,8 @@ def contorno_pontas(letras, W, H, b, n=200):
 
     def perfil(letra, lado):
         _, ly0, _, ly1 = letra.bounds
-        lo, hi = max(b, ly0) + 0.05, min(H - b, ly1) - 0.05
+        bc_ = b if bc is None else bc
+        lo, hi = max(b, ly0) + 0.05, min(H - bc_, ly1) - 0.05
         pts = []
         for k in range(n + 1):
             Y = H * k / n
@@ -180,7 +183,8 @@ def contorno_pontas(letras, W, H, b, n=200):
     return P(perfil(primeira, "esq") + perfil(ultima, "dir")[::-1]).buffer(0)
 
 
-def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=False):
+def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=False, barra_cima=None):
+    bc = barra_min if barra_cima is None else barra_cima  # barra de cima (0 = letras livres em cima)
     """Bloco como na foto: barra em cima e embaixo (sem paredes laterais) com as
     letras grossas indo de uma barra à outra; o vazado fica só entre as letras.
     exato=True: o bloco fica com a largura larg_alvo exata (afinando como na foto)
@@ -195,7 +199,7 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=Fa
         # e abrir um pouco o espaço entre elas.
         hl = alt_max / (1 + 2 * MOLDURA)
         if MOLDURA * hl < barra_min:
-            hl = alt_max - 2 * barra_min
+            hl = alt_max - barra_min - bc
         f = hl / h0
         k = larg_alvo / (w0 * f)                 # quanto o nome precisa alargar
         alarga = min(max(k, 1.0), ALARGA_MAX)
@@ -213,7 +217,7 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=Fa
             hl = h0 * f
             b = max(barra_min, MOLDURA * hl)
             lat = b if laterais else 0.0
-            W, H = w0 * f + 2 * lat, hl + 2 * b
+            W, H = w0 * f + 2 * lat, hl + b + bc
             f *= min(larg_alvo / W, alt_max / H)
     hl, wl = h0 * f, w0 * f
     b = max(barra_min, MOLDURA * hl)
@@ -224,23 +228,23 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=Fa
     letras = affinity.scale(scale(t, f).simplify(0.02), (wl + 2 * ov) / wl if laterais else 1.0,
                             (hl + 2 * ov) / hl, origin=(0, 0))
     letras = shift(letras, lat - (ov if laterais else 0.0), b - ov)
-    W, H = wl + 2 * lat, hl + 2 * b
+    W, H = wl + 2 * lat, hl + b + bc
     externo = box(0, 0, W, H)
     if laterais:
-        moldura = externo.difference(box(b, b, W - b, H - b))
+        moldura = externo.difference(box(b, b, W - b, H - bc))
     else:
-        moldura = unary_union([box(0, 0, W, b), box(0, H - b, W, H)])
-    perfil = unary_union([moldura, letras])
+        moldura = unary_union([box(0, 0, W, b), box(0, H - bc, W, H)]) if bc > 0 else box(0, 0, W, b)
+    perfil = unary_union([moldura, letras]).intersection(externo)
     if not laterais:
         # como na foto: o contorno da 1ª e da última letra fecha o bloco nas pontas
         # (B reto, O arredondado, A/Y inclinado) — as barras não sobram para fora
-        perfil = perfil.intersection(contorno_pontas(letras, W, H, b))
+        perfil = perfil.intersection(contorno_pontas(letras, W, H, b, bc))
     perfil = perfil.buffer(0.12, join_style=2).buffer(-0.12, join_style=2)  # limpa pontos encostados
     perfil = perfil.buffer(-0.4).buffer(0.4).buffer(0.4).buffer(-0.4).simplify(0.02)  # cantos arredondados
     if perfil.geom_type == "MultiPolygon":
         print("   pedaços:", [round(g.area, 2) for g in perfil.geoms])
         perfil = max(perfil.geoms, key=lambda g: g.area)
-    print(f"  {txt}: {perfil.geom_type}, furos={len(perfil.interiors) if perfil.geom_type == 'Polygon' else '?'}, barra={b:.1f}mm")
+    print(f"  {txt}: {perfil.geom_type}, furos={len(perfil.interiors) if perfil.geom_type == 'Polygon' else '?'}, barras={b:.1f}/{bc:.1f}mm")
     m = extrude(perfil, PROF_TOTAL)
     PERFIS[txt] = perfil.wkt
     return m, W, H
@@ -274,9 +278,9 @@ n = len(ANDARES)
 pecas = []  # (nome, cor, mesh, w, h)
 for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
-    m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=2.5, exato=True)
+    m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=BARRAS[i][0], barra_cima=BARRAS[i][1], exato=True)
     pecas.append((txt, cor, m, w, h))
-m, w, h = build_piece("FELIZ NATAL", 70.0, 13.0, laterais=False, barra_min=1.6, exato=True)
+m, w, h = build_piece("FELIZ NATAL", 70.0, 13.0, laterais=False, barra_min=1.8, barra_cima=0.0, exato=True)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
 
 for txt, cor, m, w, h in pecas:
