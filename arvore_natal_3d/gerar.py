@@ -18,17 +18,17 @@ os.makedirs(OUT, exist_ok=True)
 # (texto, cor) de baixo para cima; "FELIZ NATAL" é o pé
 VERDE, VERMELHO = "verde", "vermelho"
 ANDARES = [
-    ("THEO", VERDE),
-    ("MAX", VERMELHO),
     ("CAMILA", VERDE),
-    ("NINA", VERMELHO),
+    ("THEO", VERMELHO),
+    ("NINA", VERDE),
+    ("MAX", VERMELHO),
     ("EDU", VERDE),
 ]
-# proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
-# medidas de cada andar na proporção da foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
-LARGURAS = [150.0, 115.0, 96.0, 76.0, 53.0]  # largura de cada andar, de baixo para cima (mm)
-ALARGA_MAX = 2.0  # letras alargam o quanto for preciso; espaço entre letras fica apertado como na foto
-ALT_MAX = [52.0, 45.0, 23.0, 26.0, 27.0]  # altura de cada andar (mm), medida na foto
+# ordem escolhida pela largura natural do nome (mais letras embaixo) para a árvore
+# afinar como na foto sem esticar as letras
+LARGURAS = [155.0, 107.0, 82.0, 63.0, 44.0]  # largura de cada andar, de baixo para cima (mm)
+ALARGA_MAX = 1.2  # letras alargam no máximo 20% (a mais fica em espaço entre letras)
+ALT_MAX = [49.0, 43.0, 35.5, 30.5, 26.5]  # altura de cada andar com as barras (mm)
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
@@ -274,7 +274,7 @@ for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
     m, w, h = build_piece(txt, alvo, ALT_MAX[i], exato=True)
     pecas.append((txt, cor, m, w, h))
-m, w, h = build_piece("FELIZ NATAL", 72.0, 16.0, laterais=False, barra_min=1.6)
+m, w, h = build_piece("FELIZ NATAL", 75.0, 16.0, laterais=False, barra_min=1.6)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
 
 for txt, cor, m, w, h in pecas:
