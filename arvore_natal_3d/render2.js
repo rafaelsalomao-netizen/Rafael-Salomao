@@ -11,7 +11,7 @@ const {chromium}=require('playwright'); const path=require('path'), fs=require('
  await p.waitForFunction('window.__ready',{timeout:120000});
  fs.rmSync('vframes',{recursive:true,force:true}); fs.mkdirSync('vframes');
  if(process.argv[2]==='fotos'){
-  await p.evaluate(()=>window.__angulo(0,120)); await p.screenshot({path:'vframes/frente.png'});
+  await p.evaluate(()=>window.__angulo(0,165)); await p.screenshot({path:'vframes/frente.png'});
   await p.evaluate(()=>window.__angulo(-0.55,190)); await p.screenshot({path:'vframes/angulo.png'});
  }else{
   const N=+process.argv[2]||1;

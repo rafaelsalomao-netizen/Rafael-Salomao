@@ -18,21 +18,21 @@ os.makedirs(OUT, exist_ok=True)
 # (texto, cor) de baixo para cima; "FELIZ NATAL" é o pé
 VERDE, VERMELHO = "verde", "vermelho"
 ANDARES = [
-    ("CAMILA", VERDE),
-    ("THEO", VERMELHO),
-    ("NINA", VERDE),
+    ("THEO", VERDE),
     ("MAX", VERMELHO),
+    ("CAMILA", VERDE),
+    ("NINA", VERMELHO),
     ("EDU", VERDE),
 ]
-# ordem escolhida pela largura natural do nome (mais letras embaixo) para a árvore
-# afinar como na foto sem esticar as letras
-LARGURAS = [155.0, 107.0, 82.0, 63.0, 44.0]  # largura de cada andar, de baixo para cima (mm)
-ALARGA_MAX = 1.2  # letras alargam no máximo 20% (a mais fica em espaço entre letras)
-ALT_MAX = [49.0, 43.0, 35.5, 30.5, 26.5]  # altura de cada andar com as barras (mm)
+# mesma estrutura da foto: dois andares de baixo com letras grandes, o nome comprido no
+# meio formando um andar baixo e largo (como VALENTINA), dois andares pequenos em cima
+LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
+ALARGA_MAX = 1.25  # letras alargam no máximo 25% (o resto vira espaço entre letras, como na foto)
+ALT_MAX = [58.0, 48.0, 31.0, 33.0, 31.5]  # altura de cada andar com as barras (mm); barras fixas de 3,5 mm como na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
-MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
+MOLDURA = 0.0                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
-ESPACO = 0.06                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
+ESPACO = 0.09                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
 
 font = TTFont(FONT)
 gs = font.getGlyphSet()
@@ -272,9 +272,9 @@ n = len(ANDARES)
 pecas = []  # (nome, cor, mesh, w, h)
 for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
-    m, w, h = build_piece(txt, alvo, ALT_MAX[i], exato=True)
+    m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=3.5, exato=True)
     pecas.append((txt, cor, m, w, h))
-m, w, h = build_piece("FELIZ NATAL", 75.0, 16.0, laterais=False, barra_min=1.6)
+m, w, h = build_piece("FELIZ NATAL", 75.0, 17.0, laterais=False, barra_min=2.0)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
 
 for txt, cor, m, w, h in pecas:

@@ -4,26 +4,28 @@ Nomes empilhados em forma de árvore, alternando verde e vermelho, com "FELIZ NA
 (igual à foto de referência, sem a estrela). Fonte Impact, a mesma da foto.
 Cada nome é uma peça única: letras grossas presas por uma barra em cima e outra embaixo.
 
-Nomes, de baixo para cima (ordem escolhida pela largura natural de cada nome, para a árvore afinar sem esticar as letras):
+Mesma estrutura da foto: larguras dos andares medidas na foto (150/115/99/75/54 mm), dois andares de baixo com
+letras grandes, o nome comprido (CAMILA) no meio formando um andar baixo e largo como VALENTINA, dois andares
+pequenos em cima. Barras de 3,5 mm fixas; letras alargam no máximo 25%, o resto vira espaço entre letras.
 
 | Peça        | Cor      | Largura x altura (mm) |
 |-------------|----------|-----------------------|
-| FELIZ NATAL | vermelho | 72 x 16               |
-| CAMILA      | verde    | 156 x 49              |
-| THEO        | vermelho | 106 x 43              |
-| NINA        | verde    | 81 x 35,5             |
-| MAX         | vermelho | 63 x 30,5             |
-| EDU         | verde    | 44 x 26,5             |
+| FELIZ NATAL | vermelho | 75 x 17               |
+| THEO        | verde    | 147 x 58              |
+| MAX         | vermelho | 113 x 48              |
+| CAMILA      | verde    | 98 x 31               |
+| NINA        | vermelho | 73,5 x 33             |
+| EDU         | verde    | 53 x 31,5             |
 
-Profundidade de todas as peças: 25 mm. Árvore montada: 156 mm de largura x 200 mm de altura.
+Profundidade de todas as peças: 25 mm. Árvore montada: 147 mm de largura x 218 mm de altura.
 
 ## Imprimir
-- `out/placa_verde.3mf`: CAMILA, NINA, EDU (filamento verde) – uma impressão.
-- `out/placa_vermelho.3mf`: THEO, MAX, FELIZ NATAL (filamento vermelho) – outra impressão.
+- `out/placa_verde.3mf`: THEO, CAMILA, EDU (filamento verde) – uma impressão.
+- `out/placa_vermelho.3mf`: MAX, NINA, FELIZ NATAL (filamento vermelho) – outra impressão.
 - Ou importe os STL de `out/` um a um (o nome do arquivo já diz a cor).
 - Peças deitadas, frente das letras virada para a mesa (já vêm assim) – a textura da mesa fica na frente, como na foto.
 - Sem suporte. PLA, camada 0,2 mm, 3 perímetros, 15% de preenchimento. Mesa texturizada PEI.
-- Montagem, de baixo para cima: FELIZ NATAL, CAMILA, THEO, NINA, MAX, EDU. Colar com cola instantânea (cianoacrilato) centralizando cada andar no de baixo.
+- Montagem, de baixo para cima: FELIZ NATAL, THEO, MAX, CAMILA, NINA, EDU. Colar com cola instantânea (cianoacrilato) centralizando cada andar no de baixo.
 
 ## Para o cliente
 `cliente/`: foto de frente, foto em ângulo e vídeo girando (MP4/GIF). `comparar.png`: foto de referência lado a lado com o modelo.
