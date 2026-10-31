@@ -13,5 +13,6 @@ Cada nome é uma peça com letras grossas vazadas, presas por uma barra em cima 
 `cliente/`: vídeo girando (MP4/GIF) e fotos simuladas.
 
 ## Regerar
-`python3 gerar.py fonts/oswald700.ttf out` (requer trimesh, shapely, fonttools, manifold3d).
-Vídeo: `bash ciclo.sh oswald700` e `node render2.js 150` (precisa de three@0.160.0 em `three/package`).
+`python3 gerar.py fonts/impact.ttf out` (requer trimesh, shapely, fonttools, manifold3d).
+Fonte: Impact (a mesma da foto de referência). Não vai no repositório por licença; extraia `Impact.TTF` de `impact32.exe` (Microsoft Core Fonts) com `cabextract` e salve como `fonts/impact.ttf`.
+Vídeo: `bash ciclo.sh impact` e `node render2.js 150` (precisa de three@0.160.0 em `three/package`).

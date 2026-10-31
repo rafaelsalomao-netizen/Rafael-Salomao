@@ -25,17 +25,17 @@ ANDARES = [
     ("EDU", VERDE),
 ]
 # proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
-LARGURAS = [150.0, 113.0, 93.0, 69.0, 49.0]  # largura de cada andar, de baixo para cima (mm)
-ALT_MAX = [52.0, 48.0, 22.5, 28.0, 24.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
+LARGURAS = [0, 0, 0, 0, 0]  # largura sai da própria palavra (letras sem deformar)
+ALT_MAX = [62.0, 58.0, 27.0, 34.0, 29.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
-ENGROSSA = 0.05                      # engrossa o traço da fonte (fração da altura), como na foto
-ESPACO = 0.08                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
+ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
+ESPACO = 0.06                        # vão entre letras (fração da altura) – é por onde se vê o outro lado
 
 font = TTFont(FONT)
 gs = font.getGlyphSet()
 cmap = font.getBestCmap()
-cap_h = font["OS/2"].sCapHeight or font["head"].unitsPerEm * 0.7
+cap_h = getattr(font["OS/2"], "sCapHeight", 0) or font["head"].unitsPerEm * 0.7
 
 
 def flatten(pen_value, steps=12):
@@ -176,8 +176,8 @@ def contorno_pontas(letras, W, H, b, n=200):
 def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=False):
     """Bloco como na foto: barra em cima e embaixo (sem paredes laterais) com as
     letras grossas indo de uma barra à outra; o vazado fica só entre as letras.
-    exato=True: o bloco fica exatamente com larg_alvo x alt_max (letras ajustadas
-    na horizontal), para repetir as proporções de cada andar da foto."""
+    exato=True: o bloco fica com a altura alt_max exata (como na foto) e a largura
+    natural da palavra, sem deformar as letras."""
     t = text_shape(txt)
     minx, miny, maxx, maxy = t.bounds
     t = shift(t, -minx, -miny)
@@ -189,8 +189,7 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=Fa
         f = hl / h0
         t = scale(t, 1.0)
         from shapely import affinity as _af
-        t = _af.scale(t, larg_alvo / (w0 * f), 1.0, origin=(0, 0))
-        w0 = larg_alvo / f
+        # letras na proporção original da fonte (sem esticar): a largura sai da palavra
     else:
         f = min(larg_alvo / w0, alt_max / h0)
         for _ in range(6):  # ajusta a escala considerando a moldura
