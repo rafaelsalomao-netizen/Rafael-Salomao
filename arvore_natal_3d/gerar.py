@@ -137,6 +137,31 @@ def extrude(geom, h, z0=0.0, raio=RAIO, passos=6):
 PERFIS = {}
 
 
+def contorno_pontas(letras, W, H, b, n=200):
+    """Silhueta lateral da palavra, como na foto: o lado esquerdo segue o contorno da
+    1ª letra e o direito o da última (B reto, O arredondado, A/Y inclinado); nas
+    alturas das barras vale a largura da letra onde ela encosta na barra, então a
+    barra termina junto com a letra, sem sobrar para fora."""
+    from shapely.geometry import LineString, Polygon as P
+    partes = list(letras.geoms) if letras.geom_type == "MultiPolygon" else [letras]
+    primeira = min(partes, key=lambda g: g.bounds[0])
+    ultima = max(partes, key=lambda g: g.bounds[2])
+
+    def perfil(letra, lado):
+        _, ly0, _, ly1 = letra.bounds
+        lo, hi = max(b, ly0) + 0.05, min(H - b, ly1) - 0.05
+        pts = []
+        for k in range(n + 1):
+            Y = H * k / n
+            y = min(max(Y, lo), hi)
+            corte = letra.intersection(LineString([(-1, y), (W + 1, y)]))
+            if not corte.is_empty:
+                pts.append((corte.bounds[0] if lado == "esq" else corte.bounds[2], Y))
+        return pts
+
+    return P(perfil(primeira, "esq") + perfil(ultima, "dir")[::-1]).buffer(0)
+
+
 def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2):
     """Bloco como na foto: barra em cima e embaixo (sem paredes laterais) com as
     letras grossas indo de uma barra à outra; o vazado fica só entre as letras."""
@@ -167,8 +192,11 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2):
         moldura = externo.difference(box(b, b, W - b, H - b))
     else:
         moldura = unary_union([box(0, 0, W, b), box(0, H - b, W, H)])
-    # letras encostam nas barras de cima e de baixo (cortadas no limite interno)
     perfil = unary_union([moldura, letras])
+    if not laterais:
+        # como na foto: o contorno da 1ª e da última letra fecha o bloco nas pontas
+        # (B reto, O arredondado, A/Y inclinado) — as barras não sobram para fora
+        perfil = perfil.intersection(contorno_pontas(letras, W, H, b))
     perfil = perfil.buffer(0.12, join_style=2).buffer(-0.12, join_style=2)  # limpa pontos encostados
     perfil = perfil.buffer(-0.4).buffer(0.4).buffer(0.4).buffer(-0.4).simplify(0.02)  # cantos arredondados
     if perfil.geom_type == "MultiPolygon":
