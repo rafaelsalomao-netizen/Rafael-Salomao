@@ -19,16 +19,16 @@ os.makedirs(OUT, exist_ok=True)
 VERDE, VERMELHO = "verde", "vermelho"
 # Alturas de cada bloco (com barras) e larguras medidas na foto de referência, de baixo para cima:
 # BRUNNO 42,3 / EMILY 43,3 / VALENTINA 20,8 / PEDRO 28,2 / THOR 25,4 mm; barras ~2,5 mm; FELIZ NATAL 13 mm.
-# Variante "edu" (padrão): CAMILA embaixo como BRUNNO, EDU em cima. O 3º andar (NINA, 4 letras) não cabe
-# nos 20,8 mm da VALENTINA sem esticar demais, então fica com 30,5 mm.
-# Variante "eduardo": EDUARDO (7 letras) faz o andar baixo e largo do meio, como VALENTINA.
-VARIANTE = sys.argv[3] if len(sys.argv) > 3 else "edu"
-if VARIANTE == "eduardo":
-    ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("EDUARDO", VERDE), ("NINA", VERMELHO), ("MAX", VERDE)]
-    ALT_MAX = [42.3, 43.3, 20.8, 28.2, 25.4]  # altura de cada andar com as barras (mm) = foto
-else:
+# Variante "eduardo" (padrão): CAMILA embaixo como BRUNNO, EDUARDO (7 letras) faz o andar baixo e largo
+# do meio como VALENTINA; todas as alturas iguais às da foto.
+# Variante "edu": EDU em cima; o 3º andar (NINA, 4 letras) não cabe nos 20,8 mm sem esticar demais, fica com 30,5.
+VARIANTE = sys.argv[3] if len(sys.argv) > 3 else "eduardo"
+if VARIANTE == "edu":
     ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("NINA", VERDE), ("MAX", VERMELHO), ("EDU", VERDE)]
     ALT_MAX = [42.3, 43.3, 30.5, 28.2, 25.4]  # altura de cada andar com as barras (mm)
+else:
+    ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("EDUARDO", VERDE), ("NINA", VERMELHO), ("MAX", VERDE)]
+    ALT_MAX = [42.3, 43.3, 20.8, 28.2, 25.4]  # altura de cada andar com as barras (mm) = foto
 LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
 ALARGA_MAX = 1.5  # letras alargam no máximo 50% para preencher o andar
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
