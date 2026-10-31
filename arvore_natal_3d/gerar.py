@@ -18,18 +18,18 @@ os.makedirs(OUT, exist_ok=True)
 # (texto, cor) de baixo para cima; "FELIZ NATAL" é o pé
 VERDE, VERMELHO = "verde", "vermelho"
 ANDARES = [
-    ("THEO", VERDE),
-    ("MAX", VERMELHO),
     ("CAMILA", VERDE),
-    ("NINA", VERMELHO),
+    ("THEO", VERMELHO),
+    ("NINA", VERDE),
+    ("MAX", VERMELHO),
     ("EDU", VERDE),
 ]
-# medidas tiradas da foto de referência (BRUNNO/EMILY/VALENTINA/PEDRO/THOR): largura de cada
-# andar e altura das letras (43,5 / 36,3 / 19,4 / 23 / 23 mm) + barras de 3,5 mm. Como os nomes têm
-# menos letras que os da foto, as letras alargam o necessário (~40%) para preencher cada andar.
+# larguras dos andares medidas na foto de referência (BRUNNO/EMILY/VALENTINA/PEDRO/THOR) e barras
+# de 3,5 mm. CAMILA embaixo fica natural como BRUNNO (6 letras); os outros nomes, mais curtos,
+# alargam 40% para preencher o andar. Alturas = largura / (razão natural do nome x alargamento) + barras.
 LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
-ALARGA_MAX = 2.5  # letras alargam o quanto for preciso para preencher o andar (na foto ~1,0; aqui ~1,4)
-ALT_MAX = [50.5, 43.3, 26.4, 30.0, 30.0]  # altura de cada andar com as barras (mm) = letras da foto + 2 x 3,5
+ALARGA_MAX = 1.4  # letras alargam no máximo 40% (CAMILA fica natural)
+ALT_MAX = [48.0, 41.8, 37.5, 30.9, 28.8]  # altura de cada andar com as barras (mm)
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.0                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
