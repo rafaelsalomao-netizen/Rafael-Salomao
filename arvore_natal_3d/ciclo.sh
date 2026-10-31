@@ -16,9 +16,10 @@ cp vframes/frente.png cliente/arvore_natal_frente.png; cp vframes/angulo.png cli
 timeout 900 node render2.js 90 810 1012
 ffmpeg -loglevel error -y -framerate 30 -i vframes/f%03d.png -c:v libx264 -pix_fmt yuv420p -crf 22 cliente/arvore_natal_giro.mp4
 ffmpeg -loglevel error -y -framerate 15 -i vframes/f%03d.png -vf "select='not(mod(n,2))',scale=405:-1,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer:bayer_scale=3" -loop 0 cliente/arvore_natal_giro.gif
-if [ -n "$2" ]; then python3 -c "
-from PIL import Image
-a=Image.open('$2').crop((20,260,720,1200)); a=a.resize((int(a.width*900/a.height),900))
-b=Image.open('cliente/arvore_natal_frente.png'); b=b.resize((int(b.width*900/b.height),900))
-c=Image.new('RGB',(a.width+b.width,900),'white'); c.paste(a,(0,0)); c.paste(b,(a.width,0)); c.save('comparar.png')"; fi
+# comparação na mesma escala (câmera fixa) com a foto de referência
+if [ -n "$2" ]; then
+  BASE=$(python3 -c "import trimesh,glob; print(round(max(trimesh.load(f).extents[0] for f in glob.glob('out/*.stl')),1))")
+  VITRINE=vitrine.html QUERY='?dist=620&alvo=105' FRAMES=cmp timeout 300 node render2.js fotos 1080 1350
+  python3 comparar.py "$2" comparar.png "cmp:$BASE:MODELO 3D:medidas da foto, fonte Impact"
+fi
 echo "ok"

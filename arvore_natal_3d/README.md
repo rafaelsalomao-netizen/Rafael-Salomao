@@ -4,20 +4,22 @@ Nomes empilhados em forma de árvore, alternando verde e vermelho, com "FELIZ NA
 (igual à foto de referência, sem a estrela). Fonte Impact, a mesma da foto.
 Cada nome é uma peça única: letras grossas presas por uma barra em cima e outra embaixo.
 
-Mesma estrutura da foto: larguras dos andares medidas na foto (150/115/99/75/54 mm), dois andares de baixo com
-letras grandes, o nome comprido (CAMILA) no meio formando um andar baixo e largo como VALENTINA, dois andares
-pequenos em cima. Barras de 3,5 mm fixas; letras alargam no máximo 25%, o resto vira espaço entre letras.
+Medidas tiradas da foto de referência: larguras dos andares 150/115/99/75/54 mm e letras de
+43,5/36,3/19,4/23/23 mm (de baixo para cima), barras de 3,5 mm. Como os nomes têm menos letras que os da
+foto (BRUNNO, VALENTINA...), as letras saem ~40% mais largas que a Impact pura para preencher cada andar.
+`comparar.png` mostra foto e modelo na mesma escala; `comparar_opcoes.png` mostra as alternativas
+(A: letras quase naturais e árvore mais alta; B: letras naturais e árvore estreita).
 
 | Peça        | Cor      | Largura x altura (mm) |
 |-------------|----------|-----------------------|
-| FELIZ NATAL | vermelho | 75 x 17               |
-| THEO        | verde    | 147 x 58              |
-| MAX         | vermelho | 113 x 48              |
-| CAMILA      | verde    | 98 x 31               |
-| NINA        | vermelho | 73,5 x 33             |
-| EDU         | verde    | 53 x 31,5             |
+| FELIZ NATAL | vermelho | 70 x 16               |
+| THEO        | verde    | 145 x 50,5            |
+| MAX         | vermelho | 113 x 43,5            |
+| CAMILA      | verde    | 96 x 26,5             |
+| NINA        | vermelho | 73 x 30               |
+| EDU         | verde    | 53 x 30               |
 
-Profundidade de todas as peças: 25 mm. Árvore montada: 147 mm de largura x 218 mm de altura.
+Profundidade de todas as peças: 25 mm. Árvore montada: 145 mm de largura x 196 mm de altura (foto: 150 x ~180).
 
 ## Imprimir
 - `out/placa_verde.3mf`: THEO, CAMILA, EDU (filamento verde) – uma impressão.
@@ -31,7 +33,7 @@ Profundidade de todas as peças: 25 mm. Árvore montada: 147 mm de largura x 218
 `cliente/`: foto de frente, foto em ângulo e vídeo girando (MP4/GIF). `comparar.png`: foto de referência lado a lado com o modelo.
 
 ## Regerar
-`bash ciclo.sh impact caminho/da/foto.jpg` gera peças, renders e comparação (requer Python com trimesh, shapely,
+`bash ciclo.sh impact caminho/da/foto.jpg` gera peças, renders e comparação na mesma escala (`comparar.py`) (requer Python com trimesh, shapely,
 fonttools, manifold3d, Pillow; Node com playwright; ffmpeg; e `three/package` = `npm pack three@0.160.0` extraído).
 Só as peças: `python3 gerar.py fonts/impact.ttf out`.
 Fonte Impact: não vai no repositório por licença; baixe `impact32.exe` (Microsoft Core Fonts, SourceForge),

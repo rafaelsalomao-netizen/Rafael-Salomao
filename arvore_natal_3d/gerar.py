@@ -24,11 +24,12 @@ ANDARES = [
     ("NINA", VERMELHO),
     ("EDU", VERDE),
 ]
-# mesma estrutura da foto: dois andares de baixo com letras grandes, o nome comprido no
-# meio formando um andar baixo e largo (como VALENTINA), dois andares pequenos em cima
+# medidas tiradas da foto de referência (BRUNNO/EMILY/VALENTINA/PEDRO/THOR): largura de cada
+# andar e altura das letras (43,5 / 36,3 / 19,4 / 23 / 23 mm) + barras de 3,5 mm. Como os nomes têm
+# menos letras que os da foto, as letras alargam o necessário (~40%) para preencher cada andar.
 LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
-ALARGA_MAX = 1.25  # letras alargam no máximo 25% (o resto vira espaço entre letras, como na foto)
-ALT_MAX = [58.0, 48.0, 31.0, 33.0, 31.5]  # altura de cada andar com as barras (mm); barras fixas de 3,5 mm como na foto
+ALARGA_MAX = 2.5  # letras alargam o quanto for preciso para preencher o andar (na foto ~1,0; aqui ~1,4)
+ALT_MAX = [50.5, 43.3, 26.4, 30.0, 30.0]  # altura de cada andar com as barras (mm) = letras da foto + 2 x 3,5
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.0                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
@@ -274,7 +275,7 @@ for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
     m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=3.5, exato=True)
     pecas.append((txt, cor, m, w, h))
-m, w, h = build_piece("FELIZ NATAL", 75.0, 17.0, laterais=False, barra_min=2.0)
+m, w, h = build_piece("FELIZ NATAL", 70.0, 16.0, laterais=False, barra_min=2.0)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
 
 for txt, cor, m, w, h in pecas:

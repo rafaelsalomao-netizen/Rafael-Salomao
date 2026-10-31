@@ -40,7 +40,7 @@ for(const p of PECAS){const bin=Uint8Array.from(atob(p.b64),c=>c.charCodeAt(0)).
  const m=new THREE.Mesh(geo,mat);m.castShadow=true;m.receiveShadow=true;grupo.add(m);hdr.expandByObject(m);}
 const c=hdr.getCenter(new THREE.Vector3()),s=hdr.getSize(new THREE.Vector3());
 grupo.position.set(-c.x,-hdr.min.y+0.01,-c.z+15);
-const alvo=new THREE.Vector3(0,s.y*0.47,0);const dist=Math.max(s.x,s.y)*2.25+40;
+const q=new URLSearchParams(location.search);const alvo=new THREE.Vector3(0,q.get('alvo')?+q.get('alvo'):s.y*0.47,0);const dist=q.get('dist')?+q.get('dist'):Math.max(s.x,s.y)*2.25+40;
 window.__frame=(a)=>{cam.position.set(Math.sin(a)*dist,s.y*0.62+Math.cos(a*0)*0,Math.cos(a)*dist);cam.lookAt(alvo);renderer.render(scene,cam);};
 window.__angulo=(a,elev)=>{cam.position.set(Math.sin(a)*dist,elev,Math.cos(a)*dist);cam.lookAt(alvo);renderer.render(scene,cam);};
 window.__frame(0);window.__ready=true;
