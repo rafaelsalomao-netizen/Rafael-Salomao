@@ -25,10 +25,10 @@ ANDARES = [
     ("EDU", VERDE),
 ]
 # proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
-# larguras na proporção da foto (100%, 75%, 62%, 47%, 33% da base)
-LARGURAS = [150.0, 113.0, 93.0, 70.0, 50.0]  # largura de cada andar, de baixo para cima (mm)
-ALARGA = 1.2  # letras 20% mais largas que a Impact, para os andares ficarem baixos como na foto
-ALT_MAX = [52.0, 48.0, 22.5, 28.0, 24.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
+# medidas de cada andar na proporção da foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
+LARGURAS = [150.0, 115.0, 96.0, 76.0, 53.0]  # largura de cada andar, de baixo para cima (mm)
+ALARGA_MAX = 1.25  # alargamento máximo das letras; o resto vira espaço entre letras
+ALT_MAX = [52.0, 45.0, 23.0, 26.0, 27.0]  # altura de cada andar (mm), medida na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
@@ -94,19 +94,22 @@ def engrossa(s, d):
     return fora.difference(furos.buffer(0.35 * d)) if not furos.is_empty else fora
 
 
-def text_shape(txt):
+def text_shape(txt, alarga=1.0, gap_extra=0.0):
+    """alarga: fator horizontal das letras; gap_extra: espaço a mais entre letras (unid. da fonte)."""
+    from shapely import affinity as _af
     parts, x = [], 0.0
     for ch in txt:
         if ch == " ":
-            x += gs[cmap[ord(" ")]].width
+            x += gs[cmap[ord(" ")]].width * alarga + gap_extra
             continue
         s, _ = glyph_shape(ch)
         s = engrossa(s, ENGROSSA * cap_h)
+        s = _af.scale(s, alarga, 1.0, origin=(0, 0))
         b = s.bounds
         # posiciona pelo contorno real + espaçamento fixo (letras bem juntas, como na foto)
         s = shift(s, x - b[0], 0)
         parts.append(s)
-        x += (b[2] - b[0]) + ESPACO * cap_h
+        x += (b[2] - b[0]) + ESPACO * cap_h + gap_extra
     return unary_union(parts)
 
 
@@ -185,12 +188,23 @@ def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=Fa
     t = shift(t, -minx, -miny)
     w0, h0 = maxx - minx, maxy - miny
     if exato:
-        # largura fixa do andar (afinando como a árvore da foto); letras alargadas
-        # só ALARGA na horizontal e a altura sai da própria palavra
-        from shapely import affinity as _af
-        t = _af.scale(t, ALARGA, 1.0, origin=(0, 0))
-        w0 = w0 * ALARGA
-        f = larg_alvo / w0
+        # largura E altura do andar fixas (proporções da foto). A diferença para a
+        # largura natural do nome é dividida entre alargar as letras (até ALARGA_MAX)
+        # e abrir um pouco o espaço entre elas.
+        hl = alt_max / (1 + 2 * MOLDURA)
+        if MOLDURA * hl < barra_min:
+            hl = alt_max - 2 * barra_min
+        f = hl / h0
+        k = larg_alvo / (w0 * f)                 # quanto o nome precisa alargar
+        alarga = min(max(k, 1.0), ALARGA_MAX)
+        n_gaps = max(len(txt) - 1, 1)
+        gap = max(0.0, (larg_alvo / f - w0 * alarga) / n_gaps)
+        print(f"   {txt}: letras x{alarga:.2f}, espaço extra {gap * f:.1f} mm")
+        t = text_shape(txt, alarga, gap)
+        minx, miny, maxx, maxy = t.bounds
+        t = shift(t, -minx, -miny)
+        w0, h0 = maxx - minx, maxy - miny
+        f = hl / h0
     else:
         f = min(larg_alvo / w0, alt_max / h0)
         for _ in range(6):  # ajusta a escala considerando a moldura
