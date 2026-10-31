@@ -18,14 +18,15 @@ os.makedirs(OUT, exist_ok=True)
 # (texto, cor) de baixo para cima; "FELIZ NATAL" é o pé
 VERDE, VERMELHO = "verde", "vermelho"
 ANDARES = [
+    ("THEO", VERDE),
+    ("MAX", VERMELHO),
     ("CAMILA", VERDE),
-    ("THEO", VERMELHO),
-    ("MAX", VERDE),
     ("NINA", VERMELHO),
     ("EDU", VERDE),
 ]
-LARGURAS = [150.0, 118.0, 92.0, 84.0, 66.0]  # largura alvo de cada andar, de baixo para cima (mm)
-ALT_MAX = [52.0, 50.0, 40.0, 36.0, 30.0]  # altura máxima de cada andar (mm) – andares de cima mais baixos, como na foto
+# proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
+LARGURAS = [150.0, 113.0, 93.0, 69.0, 49.0]  # largura de cada andar, de baixo para cima (mm)
+ALT_MAX = [52.0, 48.0, 22.5, 28.0, 24.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.05                      # engrossa o traço da fonte (fração da altura), como na foto
@@ -162,24 +163,35 @@ def contorno_pontas(letras, W, H, b, n=200):
     return P(perfil(primeira, "esq") + perfil(ultima, "dir")[::-1]).buffer(0)
 
 
-def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2):
+def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=False):
     """Bloco como na foto: barra em cima e embaixo (sem paredes laterais) com as
-    letras grossas indo de uma barra à outra; o vazado fica só entre as letras."""
+    letras grossas indo de uma barra à outra; o vazado fica só entre as letras.
+    exato=True: o bloco fica exatamente com larg_alvo x alt_max (letras ajustadas
+    na horizontal), para repetir as proporções de cada andar da foto."""
     t = text_shape(txt)
     minx, miny, maxx, maxy = t.bounds
     t = shift(t, -minx, -miny)
     w0, h0 = maxx - minx, maxy - miny
-    vao = ESPACO * cap_h
-    f = min(larg_alvo / w0, alt_max / h0)
-    for _ in range(6):  # ajusta a escala considerando a moldura
-        hl = h0 * f
-        b = max(barra_min, MOLDURA * hl)
-        lat = b if laterais else 0.0
-        W, H = w0 * f + 2 * lat, hl + 2 * b
-        f *= min(larg_alvo / W, alt_max / H)
+    if exato:
+        hl = alt_max / (1 + 2 * MOLDURA)
+        if MOLDURA * hl < barra_min:
+            hl = alt_max - 2 * barra_min
+        f = hl / h0
+        t = scale(t, 1.0)
+        from shapely import affinity as _af
+        t = _af.scale(t, larg_alvo / (w0 * f), 1.0, origin=(0, 0))
+        w0 = larg_alvo / f
+    else:
+        f = min(larg_alvo / w0, alt_max / h0)
+        for _ in range(6):  # ajusta a escala considerando a moldura
+            hl = h0 * f
+            b = max(barra_min, MOLDURA * hl)
+            lat = b if laterais else 0.0
+            W, H = w0 * f + 2 * lat, hl + 2 * b
+            f *= min(larg_alvo / W, alt_max / H)
     hl, wl = h0 * f, w0 * f
     b = max(barra_min, MOLDURA * hl)
-    lat = b if laterais else 0.0  # primeira e última letra encostam na lateral, como na foto
+    lat = b if laterais else 0.0
     from shapely import affinity
     # letras entram 0,6 mm nas barras/laterais para fundirem numa peça só
     ov = 0.6
@@ -236,7 +248,7 @@ n = len(ANDARES)
 pecas = []  # (nome, cor, mesh, w, h)
 for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
-    m, w, h = build_piece(txt, alvo, ALT_MAX[i])
+    m, w, h = build_piece(txt, alvo, ALT_MAX[i], exato=True)
     pecas.append((txt, cor, m, w, h))
 m, w, h = build_piece("FELIZ NATAL", 72.0, 16.0, laterais=False, barra_min=1.6)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
