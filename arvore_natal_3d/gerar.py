@@ -17,19 +17,20 @@ os.makedirs(OUT, exist_ok=True)
 
 # (texto, cor) de baixo para cima; "FELIZ NATAL" é o pé
 VERDE, VERMELHO = "verde", "vermelho"
-ANDARES = [
-    ("CAMILA", VERDE),
-    ("THEO", VERMELHO),
-    ("NINA", VERDE),
-    ("MAX", VERMELHO),
-    ("EDU", VERDE),
-]
-# larguras dos andares medidas na foto de referência (BRUNNO/EMILY/VALENTINA/PEDRO/THOR) e barras
-# de 3,5 mm. CAMILA embaixo fica natural como BRUNNO (6 letras); os outros nomes, mais curtos,
-# alargam 40% para preencher o andar. Alturas = largura / (razão natural do nome x alargamento) + barras.
+# Alturas de cada bloco (com barras) e larguras medidas na foto de referência, de baixo para cima:
+# BRUNNO 42,3 / EMILY 43,3 / VALENTINA 20,8 / PEDRO 28,2 / THOR 25,4 mm; barras ~2,5 mm; FELIZ NATAL 13 mm.
+# Variante "edu" (padrão): CAMILA embaixo como BRUNNO, EDU em cima. O 3º andar (NINA, 4 letras) não cabe
+# nos 20,8 mm da VALENTINA sem esticar demais, então fica com 30,5 mm.
+# Variante "eduardo": EDUARDO (7 letras) faz o andar baixo e largo do meio, como VALENTINA.
+VARIANTE = sys.argv[3] if len(sys.argv) > 3 else "edu"
+if VARIANTE == "eduardo":
+    ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("EDUARDO", VERDE), ("NINA", VERMELHO), ("MAX", VERDE)]
+    ALT_MAX = [42.3, 43.3, 20.8, 28.2, 25.4]  # altura de cada andar com as barras (mm) = foto
+else:
+    ANDARES = [("CAMILA", VERDE), ("THEO", VERMELHO), ("NINA", VERDE), ("MAX", VERMELHO), ("EDU", VERDE)]
+    ALT_MAX = [42.3, 43.3, 30.5, 28.2, 25.4]  # altura de cada andar com as barras (mm)
 LARGURAS = [150.0, 115.0, 99.0, 75.0, 54.0]  # largura de cada andar, de baixo para cima (mm), medidas na foto
-ALARGA_MAX = 1.4  # letras alargam no máximo 40% (CAMILA fica natural)
-ALT_MAX = [48.0, 41.8, 37.5, 30.9, 28.8]  # altura de cada andar com as barras (mm)
+ALARGA_MAX = 1.5  # letras alargam no máximo 50% para preencher o andar
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.0                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
@@ -273,9 +274,9 @@ n = len(ANDARES)
 pecas = []  # (nome, cor, mesh, w, h)
 for i, (txt, cor) in enumerate(ANDARES):
     alvo = LARGURAS[i]
-    m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=3.5, exato=True)
+    m, w, h = build_piece(txt, alvo, ALT_MAX[i], barra_min=2.5, exato=True)
     pecas.append((txt, cor, m, w, h))
-m, w, h = build_piece("FELIZ NATAL", 70.0, 16.0, laterais=False, barra_min=2.0)
+m, w, h = build_piece("FELIZ NATAL", 70.0, 13.0, laterais=False, barra_min=1.6, exato=True)
 pecas.insert(0, ("FELIZ NATAL", VERMELHO, m, w, h))
 
 for txt, cor, m, w, h in pecas:
