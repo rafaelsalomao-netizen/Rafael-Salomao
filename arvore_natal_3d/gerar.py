@@ -82,6 +82,16 @@ def glyph_shape(ch):
     return shape, g.width
 
 
+def engrossa(s, d):
+    """Engrossa só o contorno de fora da letra; os furos de dentro (O, A, D, R...)
+    continuam do tamanho original para aparecerem bem, como na foto."""
+    polys = list(s.geoms) if s.geom_type == "MultiPolygon" else [s]
+    fora = unary_union([Polygon(p.exterior) for p in polys]).buffer(d, join_style=2, mitre_limit=4)
+    furos = unary_union([Polygon(i) for p in polys for i in p.interiors])
+    # furos um pouco maiores que os da fonte (O, A bem visíveis como na foto)
+    return fora.difference(furos.buffer(0.35 * d)) if not furos.is_empty else fora
+
+
 def text_shape(txt):
     parts, x = [], 0.0
     for ch in txt:
@@ -89,7 +99,7 @@ def text_shape(txt):
             x += gs[cmap[ord(" ")]].width
             continue
         s, _ = glyph_shape(ch)
-        s = s.buffer(ENGROSSA * cap_h, join_style=2, mitre_limit=4)
+        s = engrossa(s, ENGROSSA * cap_h)
         b = s.bounds
         # posiciona pelo contorno real + espaçamento fixo (letras bem juntas, como na foto)
         s = shift(s, x - b[0], 0)

@@ -2,7 +2,7 @@ import json, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from shapely import wkt
 P = {k: wkt.loads(v) for k, v in json.load(open("out/_perfis.json")).items()}
-ordem = [("FELIZ NATAL","#e0243f"),("CAMILA","#13a34f"),("THEO","#e0243f"),("NINA","#13a34f"),("MAX","#e0243f"),("EDU","#13a34f")]
+ordem = [("FELIZ NATAL","#e0243f"),("THEO","#13a34f"),("MAX","#e0243f"),("CAMILA","#13a34f"),("NINA","#e0243f"),("EDU","#13a34f")]
 def desenha(ax, g, dx, dy, c):
     for p in (g.geoms if g.geom_type == "MultiPolygon" else [g]):
         xs, ys = p.exterior.xy; ax.fill([x+dx for x in xs], [y+dy for y in ys], color=c, lw=0)
