@@ -26,7 +26,7 @@ ANDARES = [
 ]
 # proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
 LARGURAS = [0, 0, 0, 0, 0]  # largura sai da própria palavra (letras sem deformar)
-ALT_MAX = [62.0, 58.0, 27.0, 34.0, 29.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
+ALT_MAX = [52.0, 48.0, 22.5, 28.0, 24.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
 ENGROSSA = 0.0                      # engrossa o traço da fonte (fração da altura), como na foto
