@@ -25,7 +25,9 @@ ANDARES = [
     ("EDU", VERDE),
 ]
 # proporções medidas na foto (BRUNNO, EMILY, VALENTINA, PEDRO, THOR), base = 150 mm
-LARGURAS = [0, 0, 0, 0, 0]  # largura sai da própria palavra (letras sem deformar)
+# larguras na proporção da foto (100%, 75%, 62%, 47%, 33% da base)
+LARGURAS = [150.0, 113.0, 93.0, 70.0, 50.0]  # largura de cada andar, de baixo para cima (mm)
+ALARGA = 1.2  # letras 20% mais largas que a Impact, para os andares ficarem baixos como na foto
 ALT_MAX = [52.0, 48.0, 22.5, 28.0, 24.0]  # altura de cada andar (mm): alto, alto, baixo, médio, baixo – como na foto
 PROF_TOTAL = 25.0                     # profundidade da peça em pé (= altura de impressão)
 MOLDURA = 0.055                       # espessura da moldura (barras de cima e de baixo), fração da altura das letras
@@ -176,20 +178,19 @@ def contorno_pontas(letras, W, H, b, n=200):
 def build_piece(txt, larg_alvo, alt_max, laterais=False, barra_min=2.2, exato=False):
     """Bloco como na foto: barra em cima e embaixo (sem paredes laterais) com as
     letras grossas indo de uma barra à outra; o vazado fica só entre as letras.
-    exato=True: o bloco fica com a altura alt_max exata (como na foto) e a largura
-    natural da palavra, sem deformar as letras."""
+    exato=True: o bloco fica com a largura larg_alvo exata (afinando como na foto)
+    e a altura sai da palavra."""
     t = text_shape(txt)
     minx, miny, maxx, maxy = t.bounds
     t = shift(t, -minx, -miny)
     w0, h0 = maxx - minx, maxy - miny
     if exato:
-        hl = alt_max / (1 + 2 * MOLDURA)
-        if MOLDURA * hl < barra_min:
-            hl = alt_max - 2 * barra_min
-        f = hl / h0
-        t = scale(t, 1.0)
+        # largura fixa do andar (afinando como a árvore da foto); letras alargadas
+        # só ALARGA na horizontal e a altura sai da própria palavra
         from shapely import affinity as _af
-        # letras na proporção original da fonte (sem esticar): a largura sai da palavra
+        t = _af.scale(t, ALARGA, 1.0, origin=(0, 0))
+        w0 = w0 * ALARGA
+        f = larg_alvo / w0
     else:
         f = min(larg_alvo / w0, alt_max / h0)
         for _ in range(6):  # ajusta a escala considerando a moldura
