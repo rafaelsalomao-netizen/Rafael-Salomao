@@ -29,7 +29,8 @@ Onde aparecer `{{NOME}}` nos textos, coloque o nome dela.
 | 1 | [`marca/identidade.md`](marca/identidade.md) | Confirmar o nome, checar @ e domínio, conhecer cores e fontes |
 | 2 | [`marca/logo/`](marca/logo/) | Logo em SVG e PNG (perfil, capas de destaque, banner), prontos |
 | 3 | [`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md) | Abrir o CNPJ dela, nota fiscal e fórmula de preço (varejo e atacado) |
-| 4 | [`catalogo-inicial.md`](catalogo-inicial.md) | Catálogo de largada: presentes, brindes, decoração e utilidades, sob encomenda |
+| 4 | [`catalogo-natal-2026.md`](catalogo-natal-2026.md) | **Agora:** os 14 produtos de Natal reais, preço por canal, kits, anúncios e posts |
+| 4b | [`catalogo-inicial.md`](catalogo-inicial.md) | Catálogo do ano: presentes, brindes, decoração e utilidades, sob encomenda |
 | 5 | [`instagram/perfil-e-lancamento.md`](instagram/perfil-e-lancamento.md) | Montar o perfil e publicar os 9 primeiros posts |
 | 6 | [`mercado-livre/guia-de-anuncios.md`](mercado-livre/guia-de-anuncios.md) | Cadastrar e publicar os anúncios de varejo |
 | 7 | [`loja-propria/guia.md`](loja-propria/guia.md) + [`site/`](site/) | Publicar o site (presentes + orçamento para empresas) |
@@ -84,6 +85,7 @@ tem o nome da afilhada e chega antes do batizado.
 ```
 loja-3d/
 ├── README.md
+├── catalogo-natal-2026.md             # Natal: 14 produtos reais, preço por canal, kits, anúncios, posts
 ├── catalogo-inicial.md                # presentes, brindes, decoração/utilidades e sob encomenda
 ├── checklist-lancamento.md            # 30 dias, dia a dia
 ├── marca/

@@ -159,6 +159,7 @@ footer a{color:var(--cacau-2)}
   <div class="wrap nav">
     <a class="marca" href="#" aria-label="Laço 3D, início"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" >  <g transform="translate(2.96,13.04)"><defs><clipPath id="cl584"><path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z"/><path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z"/></clipPath></defs> <path d="M45.32 30.56 L25.16 65.84 L34.40 63.32 L36.92 69.20 L47.84 35.60 Z" fill="#B9A6D9" stroke="#B9A6D9" stroke-width="2.52" stroke-linejoin="round"/> <path d="M48.68 30.56 L68.84 65.84 L59.60 63.32 L57.08 69.20 L46.16 35.60 Z" fill="#B9A6D9" stroke="#B9A6D9" stroke-width="2.52" stroke-linejoin="round"/> <path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z" fill="#D98C9A"/> <path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z" fill="#D98C9A"/> <rect x="5.00" y="11.16" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="5.00" y="18.72" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="5.00" y="26.28" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="40.70" y="20.06" width="12.60" height="14.28" rx="4.20" fill="#3E3237"/></g> </svg> Laço<span>3D</span></a>
     <nav>
+      <a href="#natal">Natal</a>
       <a href="#presentes">Presentes</a>
       <a href="#decoracao">Decoração</a>
       <a href="#empresas">Para empresas</a>
@@ -191,7 +192,16 @@ footer a{color:var(--cacau-2)}
   </div>
 </section>
 
-<section id="presentes">
+<section id="natal">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#B23A3A">Natal 2026 · pronta entrega</div>
+    <h2>Decoração de Natal impressa em 3D, para a sua mesa ou para presentear.</h2>
+    <p style="color:var(--cacau-2);max-width:60ch">Kits montados com as peças do estúdio, prontos para enviar. Avulsos disponíveis para retirada em {{CIDADE}}. Pedidos online até {{PRAZO_NATAL}}.</p>
+    <div class="produtos" id="lista-natal"></div>
+  </div>
+</section>
+
+<section id="presentes" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Para presentear</div>
     <h2>Escolha o produto. O nome, você diz na hora do pedido.</h2>
@@ -285,7 +295,7 @@ footer a{color:var(--cacau-2)}
       </div>
       <form id="form-presente" role="tabpanel" aria-labelledby="aba-presente">
         <label>Produto<select id="p-produto" name="produto" required></select></label>
-        <label>Nomes ou personalização (um por linha; escreva "sem nome" se não quiser)<textarea id="p-nomes" name="nomes" placeholder="HELENA&#10;MIGUEL" required></textarea></label>
+        <label>Nomes, cores ou observações (escreva "padrão" se não quiser personalizar)<textarea id="p-nomes" name="nomes" placeholder="HELENA&#10;MIGUEL" required></textarea></label>
         <div class="row2">
           <label>Cores<input id="p-cores" name="cores" placeholder="rosa e lilás"></label>
           <label>Precisa receber até<input id="p-data" name="data" type="date"></label>
@@ -379,8 +389,21 @@ const DADOS = {
   CIDADE:             "Sua cidade, UF",
   CNPJ:               "00.000.000/0001-00",
   PRAZO_PRODUCAO:     "3 dias úteis",
-  DESTAQUE_TEMPORADA: "Pedidos de Natal até 10/12", // troque a cada data comemorativa
+  DESTAQUE_TEMPORADA: "Pedidos de Natal até 12/12", // troque a cada data comemorativa
+  PRAZO_NATAL:        "12/12",
 };
+
+/* Natal 2026: kits para envio e avulsos para retirada. Fotos em site/img/natal/. */
+const NATAL = [
+  { id:"kit-sagrada",  nome:"Kit Sagrada Família",         desc:"Bandeja \"Ore e confie\" (19 cm), Sagrada Família (11 cm), árvore com estrela dourada (14 cm) e vela de LED. O presépio de mesa completo.", preco:"R$ 79", nota:"retirada: R$ 69", img:"img/natal/kit-sagrada-familia.jpg" },
+  { id:"kit-turma",    nome:"Kit Turma do Natal",          desc:"Papai Noel, boneco de neve, rena e árvore em textura de tricô, 7 a 8 cm cada. Quatro peças que viram a mesa inteira.", preco:"R$ 79", nota:"retirada: R$ 65 · avulso R$ 18", img:"img/natal/papai-noel.jpg" },
+  { id:"kit-mesa",     nome:"Kit Mesa de Natal",           desc:"Bandeja oval branca (18 cm), letreiro Feliz Natal (15 cm), árvore de 14 cm e duas caixinhas de presente.", preco:"R$ 85", nota:"retirada: R$ 69", img:"img/natal/bandeja-oval-branca.jpg" },
+  { id:"kit-vila",     nome:"Kit Vila Iluminada",          desc:"Três casinhas brancas de 8 cm com vela de LED dentro. Luz apagada, as janelas acendem.", preco:"R$ 85", nota:"retirada: R$ 69 · avulsa R$ 25", img:"img/natal/casinha-da-vila.jpg" },
+  { id:"arvore14",     nome:"Árvore de Natal com estrela", desc:"14 cm, verde com estrela dourada e tronco. Avulsa para retirada ou em lote para empresas com logo na base.", preco:"R$ 16", nota:"retirada · empresas a partir de 20 un", img:"img/natal/arvore-de-natal-14cm.jpg" },
+  { id:"feliz-natal",  nome:"Letreiros Feliz Natal",       desc:"Cursivo (15 × 9 cm) ou com floco de neve (P 8 cm, M 11 cm). Para a mesa, a estante ou a entrada.", preco:"R$ 12 a 16", nota:"retirada · dupla M + cursivo R$ 29", img:"img/natal/feliz-natal-cursivo.jpg" },
+  { id:"caixas",       nome:"Caixas de presente decorativas", desc:"Vazadas, P (7 cm) amarela e M (12 cm) vermelha. Ficam lindas com pisca-pisca dentro.", preco:"R$ 10 e 12", nota:"retirada", img:"img/natal/caixa-de-presente.jpg" },
+  { id:"sagrada",      nome:"Sagrada Família",             desc:"11 cm, em caramelo com textura de camadas. Avulsa ou dentro do kit com a bandeja.", preco:"R$ 16", nota:"retirada", img:"img/natal/sagrada-familia.jpg" },
+];
 
 /* Produtos de varejo: salve a foto quadrada em site/img/ e preencha "img". Sem foto, aparece a cor de fundo com o nome. */
 const PRODUTOS = [
@@ -407,8 +430,8 @@ const DECORACAO = [
 /* ---- não precisa mexer daqui para baixo ---- */
 document.body.innerHTML = document.body.innerHTML.replace(/\{\{(\w+)\}\}/g, (m,k) => DADOS[k] ?? m);
 
-const lista = document.getElementById("lista-produtos"), listaDeco = document.getElementById("lista-decoracao"), sel = document.getElementById("p-produto");
-const TODOS = [...PRODUTOS, ...DECORACAO];
+const lista = document.getElementById("lista-produtos"), listaDeco = document.getElementById("lista-decoracao"), listaNatal = document.getElementById("lista-natal"), sel = document.getElementById("p-produto");
+const TODOS = [...NATAL, ...PRODUTOS, ...DECORACAO];
 function montar(itens, alvo) {
   itens.forEach(p => {
     const card = document.createElement("article"); card.className = "card";
@@ -419,7 +442,7 @@ function montar(itens, alvo) {
     const o = document.createElement("option"); o.value = p.id; o.textContent = `${p.nome} — ${p.preco}`; sel.appendChild(o);
   });
 }
-montar(PRODUTOS, lista); montar(DECORACAO, listaDeco);
+montar(NATAL, listaNatal); montar(PRODUTOS, lista); montar(DECORACAO, listaDeco);
 
 const abas = { presente: document.getElementById("aba-presente"), empresa: document.getElementById("aba-empresa"), encomenda: document.getElementById("aba-encomenda") };
 const forms = { presente: document.getElementById("form-presente"), empresa: document.getElementById("form-empresa"), encomenda: document.getElementById("form-encomenda") };
