@@ -2,61 +2,74 @@
 
 ## 1. Nome
 
-### Recomendado: **Camada 3D**
+### Recomendado: **Laço 3D**
 
-"Camada" é como a impressora constrói a peça (camada por camada) e também
-como os nomes da árvore se empilham. É palavra do dia a dia, fácil de
-falar, escrever e lembrar, e não prende a loja a um único produto: serve
-para Natal, para porta-chaves, para organizador de mesa.
+Laço é o que fecha um presente e é o vínculo entre quem dá e quem recebe.
+Serve para lembrancinha de chá de bebê e para brinde de empresa ("criar
+laços com clientes"). É curto, fácil de falar e lembrar, e tem imagem
+pronta para o logo.
 
-- Tagline: **Seu nome, camada por camada.**
-- Descrição curta (bio, Mercado Livre): *Presentes e decoração impressos em 3D, com o seu nome.*
-- Uso por escrito: "Camada 3D" (C maiúsculo, espaço, 3D). Nunca "camada3d" em texto corrido.
+- Tagline: **presentes e brindes impressos em 3D**
+- Frase de marca: *Feito com carinho, um de cada vez.*
+- Uso por escrito: "Laço 3D". Em @ e domínio, sem cedilha: `laco3d`.
 
 ### Alternativas, caso o @ ou o domínio estejam ocupados
 
+**Nomes fantasia**
+
 | Nome | Por que funciona | Risco |
 |---|---|---|
-| **Letra Forte** | Fala direto do produto (letras grossas, nome em destaque) | Limita a linha a produtos com texto |
-| **Vértice 3D** | Geométrico, soa técnico e moderno | Mais frio; menos "presente" |
-| **Salomão 3D** | Usa o sobrenome, fácil de confiar | Confunde com a marca de síndico profissional |
-| **Fôrma & Nome** | Artesanal, ótimo para presentes | Acento e "&" dificultam @ e domínio |
+| **Afeto Impresso** | Diz o que a loja faz e como; sem acento no @ | Longo para logo pequeno |
+| **Mimo em Camadas** | "Mimo" é presente carinhoso; "camadas" é a impressão 3D | Soa só varejo, menos empresa |
+| **Doce Camada** | Delicado, fácil de lembrar | Pode parecer confeitaria |
+
+**Com o nome dela** (troque `{{NOME}}`)
+
+| Fórmula | Exemplo | Quando faz sentido |
+|---|---|---|
+| **Ateliê {{NOME}}** | Ateliê Mari | A marca é a pessoa; ótimo para o Instagram, onde ela aparece |
+| **{{NOME}} Faz 3D** | Carla Faz 3D | Divertido, direto, bom para Reels |
+| **Mimos da {{NOME}}** | Mimos da Ju | Varejo afetivo; fraco para empresa |
+
+Prós de usar o nome dela: confiança imediata, o rosto dela vira a marca.
+Contras: se um dia quiser vender a loja ou colocar sócia, o nome vai junto;
+e empresa prefere comprar de "marca" a comprar de "pessoa". Por isso a
+recomendação é fantasia (Laço 3D) com **ela aparecendo** nos stories como
+"a {{NOME}}, da Laço 3D". Se preferirem o nome dela, rode o script do logo
+com o novo texto (item 4).
 
 ### Checagem de disponibilidade (faça antes de imprimir qualquer coisa)
 
 Não foi possível verificar automaticamente daqui. Confira, nesta ordem:
 
-1. **Instagram:** abra `instagram.com/camada3d` e `instagram.com/camada.3d`. Se um estiver livre, crie a conta no mesmo dia.
-2. **Domínio:** `registro.br` → pesquisar `camada3d.com.br` (cerca de R$ 40/ano).
-3. **Marca registrada:** `busca.inpi.gov.br` → pesquisar "camada" nas classes **20** (móveis e decoração), **28** (jogos e enfeites de Natal) e **35** (comércio). Se não houver marca idêntica no mesmo ramo, registre: MEI paga taxa reduzida (confira o valor no site do INPI). O registro leva mais de um ano, mas a proteção conta a partir do pedido.
-4. **Mercado Livre:** o nome da loja é escolhido no cadastro; repetido não é bloqueado, mas evite igual a um concorrente.
-
-Se `@camada3d` estiver ocupado, a ordem de preferência é `@camada.3d`,
-`@camada3d.br`, `@lojacamada3d`.
+1. **Instagram:** `instagram.com/laco3d`, depois `laco.3d`, `laco3d.oficial`. Se estiver livre, crie a conta no mesmo dia.
+2. **Domínio:** `registro.br` → `laco3d.com.br` (cerca de R$ 40/ano).
+3. **Marca:** `busca.inpi.gov.br` → "laço" nas classes **14** (chaveiros), **16** (papelaria e brindes), **20** (decoração), **21** (utensílios), **35** (comércio). Se não houver marca igual no mesmo ramo, registre: MEI paga taxa reduzida. O registro leva mais de um ano, mas a proteção conta a partir do pedido.
+4. **Mercado Livre:** o nome da loja é escolhido no cadastro.
 
 ---
 
 ## 2. Cores
 
-A paleta vem do filamento: cores vivas e opacas sobre fundo neutro, como
-peça recém-saída da mesa.
+Paleta delicada e quente, como presente embrulhado em papel de seda. Vem
+da pergunta "delicado e afetivo".
 
 | Papel | Nome | Hex | Uso |
 |---|---|---|---|
-| Base escura | Tinta | `#171A2B` | Texto, fundo do perfil, fundo de banner |
-| Destaque principal | Coral | `#FF5A3C` | "3D" do logo, botões, preço, chamadas |
-| Destaque secundário | Verde-água | `#119DA4` | Tagline, ícones, detalhes |
-| Destaque de apoio | Limão | `#FFD166` | Fundo claro de destaque, selo, Natal (com coral) |
-| Fundo claro | Papel | `#F7F7F4` | Fundo de post, site, embalagem |
+| Texto e base | Cacau | `#3E3237` | Texto, nó do laço, fundo escuro de banner |
+| Principal | Rosé | `#D98C9A` | Laço, botões, preço, destaque |
+| Secundária | Lilás | `#B9A6D9` | "3D" do logo, fitas, detalhes, capas |
+| Apoio | Sálvia | `#9DB8A4` | Selos ("pronta entrega"), linha para empresas |
+| Fundo | Areia | `#F6F1EA` | Fundo de post, site, embalagem, etiqueta |
 
 Regras simples:
 
-- Em cada post, **uma cor de destaque** só. Coral é a padrão.
-- Texto sempre em Tinta sobre Papel, ou em Papel sobre Tinta. Nunca texto
-  coral sobre verde-água (não dá contraste).
-- Natal: coral + limão sobre Tinta. Não use verde-bandeira e vermelho-sangue
-  nos posts, mesmo que a peça seja verde e vermelha: a foto já traz essas
-  cores, o layout não precisa repetir.
+- Em cada post, **uma cor de destaque** só. Rosé é a padrão; para posts
+  "para empresas", use Sálvia ou Cacau.
+- Texto sempre Cacau sobre Areia, ou branco sobre Cacau/Rosé. Nunca texto
+  Lilás sobre Rosé (não dá contraste).
+- Fotos de produto em fundo Areia ou branco, luz natural, com uma fita de
+  cetim rosé ou lilás na composição: repete o laço do logo sem precisar dizer.
 
 ---
 
@@ -64,64 +77,72 @@ Regras simples:
 
 | Papel | Fonte | Onde baixar | Uso |
 |---|---|---|---|
-| Títulos e logo | **Outfit** (peso 800 e 700) | Google Fonts | Logo, título de post, capa de destaque, títulos do site |
-| Texto | **Manrope** (400 e 600) | Google Fonts | Legendas longas em imagem, texto do site, descrição no Mercado Livre |
-| Nas peças | Oswald 700 (ou Anton, Bebas Neue) | Google Fonts | Letras impressas em 3D (licença livre para uso comercial) |
+| Títulos e logo | **Fredoka** (600 e 500) | Google Fonts | Logo, título de post, capa de destaque, títulos do site |
+| Texto | **Nunito** (400 e 700) | Google Fonts | Legendas em imagem, texto do site, descrição no Mercado Livre |
+| Nas peças | Fredoka, Baloo 2 ou Poppins Bold | Google Fonts | Letras impressas em 3D (arredondadas, grossas, imprimem bem) |
 
-Instale Outfit e Manrope no celular/computador para usar no Canva ou no
-CapCut e o material fica igual ao logo.
+Instale Fredoka e Nunito no celular e no computador para usar no Canva e no
+CapCut; o material fica igual ao logo.
 
 ---
 
 ## 4. Logo — arquivos e uso
 
 Pasta [`logo/`](logo/). Os SVG têm o texto convertido em curvas (abrem em
-qualquer programa sem precisar da fonte).
+qualquer programa sem precisar da fonte). O laço tem três listras em cada
+laçada: as camadas da impressão.
 
 | Arquivo | Quando usar |
 |---|---|
-| `camada3d-logo-horizontal.svg` | Padrão: site, banner, etiqueta, nota, cartão |
-| `camada3d-logo-horizontal-fundo-escuro.svg` | Sobre fundo Tinta ou foto escura |
-| `camada3d-logo-vertical.svg` / `-tagline.svg` | Embalagem, adesivo quadrado, abertura de Reels |
-| `camada3d-icone.svg` | Foto de perfil, favicon, marca d'água, selo na embalagem |
-| `*-mono-preto.svg` / `*-mono-branco.svg` | Impressão em uma cor, carimbo, gravação, marca d'água em foto |
-| `png/perfil-instagram-escuro.png` | Foto de perfil do Instagram e do Mercado Livre (1080×1080) |
-| `png/capa-destaque-*.png` | Capas dos 6 destaques do Instagram (1080×1920) |
+| `laco3d-logo-horizontal.svg` | Padrão: site, banner, etiqueta, nota, cartão |
+| `laco3d-logo-horizontal-fundo-escuro.svg` | Sobre fundo Cacau ou foto escura |
+| `laco3d-logo-vertical.svg` / `-tagline.svg` | Embalagem, adesivo quadrado, abertura de Reels |
+| `laco3d-icone.svg` | Foto de perfil, favicon, marca d'água, selo na embalagem |
+| `*-mono-escuro.svg` / `*-mono-branco.svg` | Impressão em uma cor, carimbo, gravação, marca d'água |
+| `png/perfil-instagram-areia.png` | Foto de perfil do Instagram e do Mercado Livre (1080×1080) |
+| `png/capa-destaque-*.png` | Capas dos 6 destaques (1080×1920) |
 | `png/banner-loja-1200x300.png` | Banner da loja no Mercado Livre e cabeçalho de e-mail |
 | `png/logo-horizontal-2400px.png` | Quando o sistema não aceita SVG (fundo transparente) |
 
 Regras de uso:
 
 - Margem mínima ao redor do logo: a altura do "3D".
-- Não estique, não incline, não troque as cores das camadas, não coloque sombra.
-- Em foto, use a versão mono branca com 70% de opacidade no canto inferior direito.
+- Não estique, não incline, não troque as cores do laço, não coloque sombra.
+- Em foto, versão mono branca com 70% de opacidade no canto inferior direito.
 - Tamanho mínimo: horizontal com 120 px de largura; abaixo disso use só o ícone.
 
 Para gerar de novo (outro nome ou outra fonte):
 
 ```bash
 pip install fonttools
-python3 gerar_logo.py caminho/Outfit-ExtraBold.ttf loja-3d/marca/logo
+python3 marca/gerar_logo.py caminho/Fredoka-SemiBold.ttf marca/logo
 ```
 
-O script `gerar_logo.py` está na raiz da pasta `marca/`. Edite a linha com
-`"CAMADA"` e `"3D"` para trocar o texto.
+Edite em `gerar_logo.py` a linha com `"Laço"` e `"3D"` para trocar o texto
+(por exemplo `"Ateliê Mari"`). Os PNGs são gerados pelo `render.js` da
+mesma pasta.
 
 ---
 
 ## 5. Tom de voz
 
-Quem compra é presenteador com pressa: pai, mãe, madrinha, namorado(a),
-alguém montando lembrancinha de empresa. Fale com essa pessoa.
+Quem compra é quem presenteia com pressa (mãe, madrinha, noiva, organizadora
+de festa) ou quem precisa de 50 brindes para sexta-feira (RH, marketing,
+dono de loja). As duas pessoas querem a mesma coisa: certeza de que vai
+ficar bonito e chegar a tempo.
 
-- **Direto e caloroso.** "Chega em 5 dias úteis" em vez de "prazo estimado conforme disponibilidade".
-- **Mostra o processo.** Vídeo da impressora andando vende mais que foto de catálogo. A pessoa quer ver que é feito, e feito para ela.
-- **Sem jargão.** Nada de "PLA", "infill", "0,2 mm" na legenda. Isso vai nos destaques "Bastidores", para quem perguntar.
-- **Promessa que cumpre.** Prazo, tamanho e cor sempre explícitos. Em personalizado, o problema nunca é o preço: é a expectativa errada.
-- Emojis: no máximo um por linha, e só em stories e legendas; nunca em título de anúncio.
+- **Caloroso e direto.** "Chega em 5 dias úteis" em vez de "prazo estimado conforme disponibilidade".
+- **Mostra o processo.** Vídeo da impressora andando e da peça saindo da
+  mesa vende mais que foto de catálogo.
+- **Sem jargão.** Nada de "PLA", "infill", "0,2 mm" na legenda. Isso vai no
+  destaque "Bastidores".
+- **Para empresas, muda o registro, não a marca:** "orçamento em 24 h",
+  "nota fiscal", "prova física antes do lote", "tabela por quantidade".
+- **Promessa que cumpre.** Prazo, tamanho e cores sempre explícitos.
+- Emojis: no máximo um por linha, só em stories e legendas; nunca em título de anúncio.
 
-Frases que resumem a marca, para usar em bio, embalagem e anúncios:
+Frases para bio, embalagem e anúncios:
 
-- Seu nome, camada por camada.
-- Feito aqui, um de cada vez.
+- Feito com carinho, um de cada vez.
 - Presente que ninguém mais tem, porque tem o nome de quem recebe.
+- Brindes com a cara da sua empresa, a partir de 20 unidades.

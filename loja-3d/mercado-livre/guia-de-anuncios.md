@@ -1,144 +1,143 @@
 # Mercado Livre — guia de anúncios
 
-O Mercado Livre é onde está quem já decidiu comprar e digita "árvore de
-natal personalizada" ou "chaveiro com nome". Você não precisa criar
-desejo lá; precisa aparecer na busca e passar confiança.
+O Mercado Livre é onde está quem já decidiu comprar e digita "lembrancinha
+personalizada chá de bebê" ou "chaveiro com nome". Serve para o varejo;
+empresa compra pelo site e pelo WhatsApp, com orçamento e nota.
 
 ## 1. Conta
 
-- Cadastre-se como **vendedor com CNPJ** desde o início. Trocar de CPF para
+- Cadastre como **vendedor com CNPJ** desde o início. Trocar de CPF para
   CNPJ depois zera reputação e histórico.
-- Nome da loja (apelido): `CAMADA3D`. Foto: `marca/logo/png/perfil-instagram-escuro.png`.
+- Apelido da loja: `LACO3D`. Foto: `marca/logo/png/perfil-instagram-areia.png`.
   Banner da Loja Oficial, quando liberar: `banner-loja-1200x300.png`.
-- Vincule o **Mercado Pago** (o dinheiro cai lá) e cadastre o endereço de
-  onde as peças saem.
-- Preencha "Sobre o vendedor" com a frase da marca e o prazo de produção.
+- Vincule o **Mercado Pago** e cadastre o endereço de postagem.
+- "Sobre o vendedor": frase da marca + prazo de produção + "também
+  fazemos brindes para empresas, consulte".
 
 ## 2. Tipo de anúncio
 
 | Tipo | Comissão aproximada | Quando usar |
 |---|---|---|
-| **Clássico** | ~12% a 14% | Produtos até R$ 79 (chaveiro, enfeite, topo de bolo) |
-| **Premium** | ~17% a 19% | Produtos acima de R$ 79 (árvore, kits): parcelamento sem juros aumenta a conversão |
+| **Clássico** | ~12% a 14% | Produtos até R$ 79 (chaveiro, tag, topo de bolo, enfeite) |
+| **Premium** | ~17% a 19% | Produtos e kits acima de R$ 79 (porta-retrato, kits): parcelamento sem juros |
 
-Abaixo de R$ 79, o Mercado Livre cobra ainda um **custo fixo por unidade**
-(hoje na faixa de R$ 6 a R$ 7). A partir de R$ 79, o **frete grátis é
-obrigatório** e sai do seu bolso (com desconto conforme a reputação).
-Esses valores mudam; antes de publicar, confira no **simulador de custos**
-do próprio site do vendedor e coloque o número real na calculadora de
-preço.
+Abaixo de R$ 79, o Mercado Livre cobra também um **custo fixo por unidade**
+(hoje na faixa de R$ 6 a R$ 7). A partir de R$ 79, **frete grátis é
+obrigatório** e sai do seu bolso (com desconto conforme a reputação). Os
+valores mudam; confira no **simulador de custos** do vendedor antes de
+publicar e coloque o número real na calculadora.
 
-Consequência prática: um enfeite a R$ 27,90 paga comissão + custo fixo e
-sobra pouco. Venda **kits** (4 enfeites por R$ 79, 3 chaveiros por R$ 49)
-para diluir a taxa.
+Consequência prática: um chaveiro avulso a R$ 19,90 paga comissão e custo
+fixo e sobra pouco. Venda **kits** (3 chaveiros por R$ 49, 4 enfeites por
+R$ 79, 20 tags por R$ 138) para diluir a taxa. Kits também são o formato
+natural de lembrancinha.
 
 ## 3. Título (60 caracteres: é o que a busca lê)
 
-Fórmula: **produto + característica principal + personalização + ocasião**.
-Sem emoji, sem "promoção", sem o nome da loja, sem ponto final.
+Fórmula: **produto + característica + personalização + ocasião**. Sem
+emoji, sem "promoção", sem nome da loja, sem ponto final.
 
 ```
-Árvore De Natal Personalizada Com Nomes Da Família Impressão 3d
-Enfeite De Natal Com Nome Personalizado Bola Árvore Kit 4 Un
 Chaveiro Personalizado Com Nome Letras 3d Lembrancinha Kit 3
-Placa De Mesa Personalizada Com Nome Escritório Festa 3d
 Topo De Bolo Personalizado Nome E Idade Aniversário Impressão 3d
+Lembrancinha Chá De Bebê Tag Com Nome Personalizada Kit 20 Un
+Porta Retrato Personalizado Com Nome Presente Dia Das Mães 3d
+Vaso Decorativo Personalizado Com Frase Presente Professora 3d
+Marcador De Lugar Casamento Nome Convidado Personalizado 30 Un
+Enfeite De Natal Com Nome Personalizado Bola Árvore Kit 4 Un
 Suporte Celular Mesa Personalizado Com Nome Presente 3d
 ```
 
-Dica: digite "árvore de natal personalizada" na busca do Mercado Livre e
-veja o que o autocompletar sugere; essas palavras vão no título.
+Digite o produto na busca do Mercado Livre e veja o que o autocompletar
+sugere; essas palavras vão no título.
 
 ## 4. Fotos (o que mais pesa na conversão)
 
 - Primeira foto: **fundo branco puro**, produto inteiro, sem texto, sem
-  marca d'água, 1200×1200 px. É exigência do Mercado Livre para aparecer bem.
-- Depois: ambientada (sobre a mesa, na árvore), na mão (escala), detalhe
-  das letras, foto das cores disponíveis, foto da embalagem.
-- Último slide: imagem com as etapas "Compre → envie os nomes por mensagem
-  → produzimos em X dias → enviamos".
-- Vídeo: o timelapse da impressora de até 60 s. Anúncio com vídeo converte mais.
+  marca d'água, 1200×1200 px. Exigência do Mercado Livre.
+- Depois: ambientada (na mesa de festa, na árvore, no bolo), na mão
+  (escala), detalhe das letras, cartela de cores, embalagem com a fita.
+- Último slide: "Compre → envie o nome por mensagem → produzimos em X dias
+  → enviamos".
+- Vídeo de até 60 s: timelapse da impressora. Anúncio com vídeo converte mais.
 
 ## 5. Ficha técnica
 
-Preencha **tudo**. Ficha incompleta derruba o anúncio na busca.
+Preencha **tudo**; ficha incompleta derruba o anúncio na busca.
 
-| Campo | O que colocar |
+| Campo | Exemplo (chaveiro) |
 |---|---|
-| Marca | Camada 3D |
-| Modelo | Árvore de Nomes 5 andares |
+| Marca | Laço 3D |
+| Modelo | Chaveiro de Nome |
 | Material | PLA (plástico de origem vegetal) |
-| Cor | Verde e vermelho (ou "A escolher") |
-| Altura × largura × profundidade | 18 cm × 15 cm × 2,5 cm |
-| Peso | 200 g |
+| Cor | A escolher (rosa, lilás, branco, preto, azul, verde, dourado) |
+| Dimensões | 6 cm × 2,5 cm × 0,5 cm |
+| Peso | 8 g |
 | Personalizável | Sim |
-| Unidades por kit | 1 |
+| Unidades por kit | 3 |
 | É artesanal | Sim |
-| Recomendado para | Decoração (nunca "crianças") |
+| Recomendado para | Lembrancinha, decoração (nunca "crianças") |
 
 ## 6. Descrição (modelo)
 
 ```
-ÁRVORE DE NATAL COM OS NOMES DA SUA FAMÍLIA
+CHAVEIRO COM NOME — KIT COM 3
 
-Cada andar da árvore é um nome, impresso em 3D com letras grossas e firmes.
-Escolha até 5 nomes (até 7 letras cada) e as cores. A base vem com
-"Feliz Natal".
+Letras grossas e arredondadas, impressas em 3D, com argola de metal.
+Escolha os nomes (até 8 letras cada) e as cores de cada chaveiro.
 
-TAMANHO: 18 cm de altura x 15 cm de largura x 2,5 cm de profundidade.
+TAMANHO: 6 cm de largura (varia com o nome) x 2,5 cm de altura.
 MATERIAL: PLA, plástico feito de amido de milho. Leve, firme, sem cheiro.
-CORES: verde e vermelho (padrão), ou escolha entre branco, preto, dourado,
-azul e rosa. Peça as cores na mensagem.
+CORES: rosa, lilás, branco, preto, azul, verde e dourado. Duas cores por
+peça (letra e base). Peça as cores na mensagem.
 
 COMO PERSONALIZAR
 1. Compre o anúncio.
-2. Responda a mensagem automática com os nomes (de baixo para cima) e as cores.
+2. Responda a mensagem automática com os nomes e as cores.
 3. Confirmamos a prévia em até 24 h.
 4. Produção: 3 dias úteis. Envio em seguida pelo Mercado Envios.
 
-PRAZO DE NATAL: pedidos confirmados até 12/12 chegam antes do Natal nas
-capitais. Depois dessa data, consulte antes de comprar.
+DATAS COMEMORATIVAS: pedidos confirmados até 2 semanas antes da data
+chegam a tempo nas capitais. Em dúvida, pergunte antes de comprar.
 
-Peça decorativa. Não é brinquedo. Mantenha longe de fontes de calor.
+Lembrancinha decorativa. Não é brinquedo. Mantenha longe de calor.
 
-Produzido em nosso ateliê, um de cada vez. Dúvidas? Pergunte aqui embaixo,
-respondemos em até 1 hora no horário comercial.
+Também fazemos lembrancinhas em quantidade (chá de bebê, casamento) e
+brindes com logo para empresas. Pergunte aqui embaixo; respondemos em até
+1 hora no horário comercial.
 ```
 
 ## 7. Como receber a personalização
 
 O Mercado Livre não tem campo de personalização na compra. Use três
-camadas de segurança para o nome chegar certo:
+camadas de segurança:
 
-1. **Variações** do anúncio para o que dá para fixar: "3 nomes / 4 nomes / 5 nomes" e a cor padrão.
+1. **Variações** para o que dá para fixar: quantidade (1 / 3 / 5) e cor padrão.
 2. **Mensagem automática pós-venda** (Vendas → Mensagens → Mensagem automática):
 
-   > Obrigado pela compra! Para produzir sua peça, responda com:
-   > 1) os nomes, na ordem de baixo para cima;
+   > Obrigada pela compra! Para produzir sua peça, responda com:
+   > 1) o(s) nome(s), exatamente como devem aparecer;
    > 2) as cores (ou "padrão");
-   > 3) se tiver, a data em que precisa receber.
-   > Em até 24 h enviamos a prévia para você aprovar. 🎄
+   > 3) a data em que precisa receber, se houver.
+   > Em até 24 h enviamos a prévia para você aprovar. 🎀
 
 3. Se o cliente não responder em 48 h, mande nova mensagem e **não
    despache** nada genérico: peça sem nome gera reclamação e devolução.
 
-Se o cliente perguntar antes de comprar ("dá para colocar 6 nomes?"),
-responda na seção de perguntas, objetivamente e em menos de 1 hora. O tempo
-de resposta entra na reputação.
+Pergunta antes da compra ("cabe 10 letras?"): responda em menos de 1
+hora, objetivamente. O tempo de resposta entra na reputação.
 
 ## 8. Prazo de despacho e envio
 
-- Marque **"produto sob encomenda / fabricação"** no prazo de despacho e
-  coloque o número real de dias úteis (3 a 5). Atraso de despacho é o que
-  mais derruba reputação.
-- Envie pelo **Mercado Envios** (agência ou coleta). A etiqueta vem pronta.
-- Não use o **Full** (estoque no galpão deles): não serve para
-  personalizado.
-- Embalagem: caixa Correios nº 1 (chaveiro, enfeite, topo) ou nº 2
-  (árvore, placa, suporte). Papel de seda, adesivo do ícone, cartão
-  "monte assim" para a árvore.
+- Marque **"produto sob encomenda / fabricação"** e coloque o número real
+  de dias úteis (3 a 5). Atraso de despacho é o que mais derruba reputação.
+- **Mercado Envios** (agência ou coleta); etiqueta pronta.
+- Não use o **Full**: não serve para personalizado.
+- Embalagem: envelope bolha (chaveiro, tag, marcador), caixa Correios nº 1
+  (topo de bolo, enfeites) ou nº 2 (porta-retrato, vaso, suporte). Papel
+  de seda, fita de cetim rosé, adesivo com o laço.
 
-## 9. Reputação (o que o algoritmo olha)
+## 9. Reputação
 
 | Indicador | Meta |
 |---|---|
@@ -148,10 +147,14 @@ de resposta entra na reputação.
 | Tempo de resposta a perguntas | menos de 1 h em horário comercial |
 
 Os primeiros 10 pedidos definem a cor da reputação. Peça para conhecidos
-comprarem de verdade (não simulado), personalizem, recebam e avaliem.
+comprarem de verdade, personalizem, recebam e avaliem.
 
-## 10. Shopee (opcional, depois)
+## 10. Shopee e Elo7 (depois)
 
-Mesma lógica, comissão menor e público que paga menos. Vale para chaveiro e
-enfeite; não vale para a árvore. Só entre quando o Mercado Livre estiver
-rodando sem erro.
+- **Shopee:** comissão menor, público que paga menos. Vale para chaveiro e
+  tag; não vale para porta-retrato.
+- **Elo7:** marketplace de artesanato e lembrancinha, público que procura
+  exatamente personalizado para festa. Vale entrar na fase 2, com os
+  kits de chá de bebê e casamento.
+
+Só entre quando o Mercado Livre estiver rodando sem erro.

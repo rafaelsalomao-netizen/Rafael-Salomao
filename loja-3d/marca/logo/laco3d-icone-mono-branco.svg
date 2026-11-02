@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<title>Laço 3D</title>
+<g transform="translate(2.96,13.04)"><defs><clipPath id="cl584"><path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z"/><path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z"/></clipPath></defs>
+<path d="M45.32 30.56 L25.16 65.84 L34.40 63.32 L36.92 69.20 L47.84 35.60 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.52" stroke-linejoin="round"/>
+<path d="M48.68 30.56 L68.84 65.84 L59.60 63.32 L57.08 69.20 L46.16 35.60 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.52" stroke-linejoin="round"/>
+<path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z" fill="#FFFFFF"/>
+<path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z" fill="#FFFFFF"/>
+<rect x="5.00" y="11.16" width="84.00" height="1.85" fill="#F6F1EA" opacity="0.5" clip-path="url(#cl584)"/>
+<rect x="5.00" y="18.72" width="84.00" height="1.85" fill="#F6F1EA" opacity="0.5" clip-path="url(#cl584)"/>
+<rect x="5.00" y="26.28" width="84.00" height="1.85" fill="#F6F1EA" opacity="0.5" clip-path="url(#cl584)"/>
+<rect x="40.70" y="20.06" width="12.60" height="14.28" rx="4.20" fill="#FFFFFF" opacity="0.9"/></g>
+</svg>

@@ -1,67 +1,77 @@
-# Camada 3D — kit de abertura da loja
+# Laço 3D — kit de abertura da loja
 
-Tudo o que precisa existir para começar a vender produtos impressos em 3D
-(Bambu Lab A1) pela internet: nome, logo, Instagram, Mercado Livre, loja
-própria, parte legal e preço. Material pensado para a primeira temporada de
-vendas — o Natal — e para crescer depois dela.
+Tudo o que precisa existir para a loja de impressão 3D da sua esposa vender
+pela internet: nome, logo, Instagram, Mercado Livre, site com pedido pelo
+WhatsApp, CNPJ e preço. Pensado para dois públicos ao mesmo tempo:
 
-> **Nome recomendado: Camada 3D.** A justificativa, as alternativas e a
-> checagem de disponibilidade estão em [`marca/identidade.md`](marca/identidade.md).
-> Nada aqui exige o nome: se preferir outro, troque "Camada 3D" nos textos e
-> gere o logo de novo com o script indicado lá.
+- **Pessoa física:** lembrancinhas de datas comemorativas (Dia das Mães,
+  Páscoa, Natal, aniversário, casamento, chá de bebê, batizado).
+- **Empresas e eventos:** brindes em quantidade (chaveiros com logo,
+  porta-crachás, lembranças de evento, kits para feiras).
+
+> **Nome recomendado: Laço 3D.** Justificativa, alternativas (inclusive com
+> o nome dela) e checagem de disponibilidade em [`marca/identidade.md`](marca/identidade.md).
+> Para trocar o nome, basta rodar o script do logo de novo e substituir
+> "Laço 3D" nos textos.
+
+Onde aparecer `{{NOME}}` nos textos, coloque o nome dela.
 
 ---
 
-## Comece por aqui (ordem importa)
+## Comece por aqui
 
 | Ordem | Arquivo | O que fazer |
 |---|---|---|
 | 1 | [`marca/identidade.md`](marca/identidade.md) | Confirmar o nome, checar @ e domínio, conhecer cores e fontes |
-| 2 | [`marca/logo/`](marca/logo/) | Logo em SVG e PNG (perfil, capas de destaque, banner) prontos para uso |
-| 3 | [`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md) | Abrir o CNPJ, entender nota fiscal e definir preço |
-| 4 | [`catalogo-inicial.md`](catalogo-inicial.md) | Os 6 produtos de largada, com preço sugerido |
+| 2 | [`marca/logo/`](marca/logo/) | Logo em SVG e PNG (perfil, capas de destaque, banner), prontos |
+| 3 | [`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md) | Abrir o CNPJ dela, nota fiscal e fórmula de preço (varejo e atacado) |
+| 4 | [`catalogo-inicial.md`](catalogo-inicial.md) | Catálogo de largada: 8 produtos para pessoa física e 5 para empresas |
 | 5 | [`instagram/perfil-e-lancamento.md`](instagram/perfil-e-lancamento.md) | Montar o perfil e publicar os 9 primeiros posts |
-| 6 | [`mercado-livre/guia-de-anuncios.md`](mercado-livre/guia-de-anuncios.md) | Cadastrar a conta e publicar os anúncios |
-| 7 | [`loja-propria/guia.md`](loja-propria/guia.md) + [`site/`](site/) | Publicar o site (catálogo + pedido pelo WhatsApp) |
-| 8 | [`checklist-lancamento.md`](checklist-lancamento.md) | Plano de 30 dias, dia a dia |
+| 6 | [`mercado-livre/guia-de-anuncios.md`](mercado-livre/guia-de-anuncios.md) | Cadastrar e publicar os anúncios de varejo |
+| 7 | [`loja-propria/guia.md`](loja-propria/guia.md) + [`site/`](site/) | Publicar o site (presentes + orçamento para empresas) |
+| 8 | [`checklist-lancamento.md`](checklist-lancamento.md) | Plano de 30 dias |
 
 ---
 
 ## A lógica do negócio
 
 ```
-INSTAGRAM       → mostra o produto pronto e o processo (confiança + desejo)
-MERCADO LIVRE   → captura quem já está procurando "presente personalizado"
-SITE + WHATSAPP → fecha o pedido personalizado (nomes, cores, prazo)
+INSTAGRAM        → mostra o produto pronto e o processo (desejo + confiança)
+MERCADO LIVRE    → captura quem já procura "lembrancinha personalizada"
+SITE + WHATSAPP  → fecha o pedido personalizado e o orçamento de empresa
+GOOGLE + LINKEDIN→ empresa da cidade procurando "brindes personalizados"
 ```
 
-Produto personalizado não se vende só com botão "comprar": a pessoa quer
-confirmar o nome, a cor e a data de entrega. Por isso o WhatsApp é o caixa
-da loja nesta fase, e o site existe para organizar o pedido antes da
-conversa.
+Os dois públicos compram a mesma coisa (uma peça com nome ou logo), mas de
+jeitos diferentes: pessoa física decide em minutos e quer prazo e preço na
+hora; empresa pede orçamento, compara e compra em quantidade com nota
+fiscal. O site tem um caminho para cada um e o WhatsApp recebe os dois.
 
-**O que vende em 3D hoje:** personalização (nome, data, frase) e prazo
-curto. Ninguém compra um vaso impresso porque é impresso; compra porque tem
-o nome do filho e chega antes do Natal.
+**O que vende em 3D hoje:** personalização (nome, data, logo) e prazo
+curto. Ninguém compra um chaveiro porque é impresso em 3D; compra porque
+tem o nome da afilhada e chega antes do batizado.
 
 ---
 
 ## Cuidados que evitam problema
 
-- **Fonte Impact:** a árvore de nomes usa a Impact, que é fonte da
-  Microsoft e não pode ser redistribuída. Para produto vendido, use uma
-  fonte com licença livre para uso comercial (Oswald, Anton e Bebas Neue,
-  todas no Google Fonts, dão resultado quase igual). O `gerar.py` já aceita
-  qualquer `.ttf`.
-- **Personagens e marcas** (Disney, times de futebol, Pokémon, logos): não
-  venda sem licença. É a causa mais comum de anúncio derrubado e conta
-  suspensa no Mercado Livre.
+- **Personagens e marcas de terceiros** (Disney, times, Stitch, Pokémon):
+  não venda sem licença. É a causa mais comum de anúncio derrubado e conta
+  suspensa no Mercado Livre. O **logo do cliente** em brinde corporativo
+  pode: ele é dono do logo e está encomendando.
 - **Brinquedo para menor de 14 anos** exige certificação do Inmetro. Venda
-  como "peça decorativa" e diga isso no anúncio; não anuncie como brinquedo.
-- **Modelos de terceiros** (Thingiverse, Printables, MakerWorld): confira a
-  licença. "CC BY-NC" proíbe venda. Prefira modelos próprios, como a árvore.
-- **Prazo:** personalizado atrasa. Prometa sempre 2 dias a mais do que o
-  cálculo e entregue antes.
+  como "peça decorativa" ou "lembrancinha" e escreva isso no anúncio.
+- **Modelos baixados** (Thingiverse, Printables, MakerWorld): confira a
+  licença. "CC BY-NC" proíbe venda. Modelos próprios ou com licença
+  comercial.
+- **Fontes nas peças:** use fontes com licença livre para uso comercial
+  (Google Fonts). Fontes do Windows (Impact, Arial) não podem ser usadas em
+  produto vendido.
+- **Prazo:** personalizado atrasa. Prometa 2 dias a mais do que o cálculo e
+  entregue antes.
+- **Alimentos:** PLA comum não é certificado para contato com alimento.
+  Topo de bolo vai no palito, fora do bolo; forminha e carimbo de biscoito
+  só com filamento certificado.
 
 ---
 
@@ -69,21 +79,18 @@ o nome do filho e chega antes do Natal.
 
 ```
 loja-3d/
-├── README.md                          # este arquivo
-├── catalogo-inicial.md                # 6 produtos de largada, preço, tempo, filamento
+├── README.md
+├── catalogo-inicial.md                # 8 produtos varejo + 5 brindes empresa, preço, tempo
 ├── checklist-lancamento.md            # 30 dias, dia a dia
 ├── marca/
-│   ├── identidade.md                  # nome, tagline, cores, fontes, tom de voz, uso do logo
-│   └── logo/                          # SVG (vetor) + png/ (perfil, capas, banner)
-├── instagram/
-│   └── perfil-e-lancamento.md         # @, bio, destaques, 9 primeiros posts, rotina
-├── mercado-livre/
-│   └── guia-de-anuncios.md            # conta, anúncio, título, fotos, ficha, personalização, frete
-├── loja-propria/
-│   └── guia.md                        # fase 1 (site + WhatsApp) e fase 2 (Nuvemshop)
+│   ├── identidade.md                  # nome, alternativas, cores, fontes, tom de voz, uso do logo
+│   ├── gerar_logo.py                  # regenera o logo com outro nome ou fonte
+│   └── logo/                          # SVG + png/ (perfil, 6 capas de destaque, banner)
+├── instagram/perfil-e-lancamento.md   # @, bio, destaques, 9 posts, rotina, anúncio pago
+├── mercado-livre/guia-de-anuncios.md  # conta, taxas, títulos, fotos, ficha, personalização, envio
+├── loja-propria/guia.md               # site + WhatsApp agora, Nuvemshop depois, Google e LinkedIn p/ empresas
 ├── juridico-financeiro/
-│   ├── mei-nota-e-precos.md           # MEI, CNAE, DAS, nota fiscal, fórmula de preço
-│   └── calculadora_preco.py           # calcula preço mínimo a partir de gramas e horas
-└── site/
-    └── index.html                     # catálogo com pedido pelo WhatsApp (arquivo único)
+│   ├── mei-nota-e-precos.md           # MEI, CNAE, DAS, nota fiscal, preço varejo e tabela por quantidade
+│   └── calculadora_preco.py           # preço mínimo a partir de gramas, horas e quantidade
+└── site/index.html                    # página: presentes + orçamento para empresas, pedido pelo WhatsApp
 ```

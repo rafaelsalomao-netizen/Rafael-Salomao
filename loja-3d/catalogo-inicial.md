@@ -1,49 +1,72 @@
-# Catálogo inicial — 6 produtos para a primeira temporada
+# Catálogo inicial
 
-Critério de escolha: imprime na Bambu A1 sem suporte, usa até 2 cores (troca
-manual de filamento, sem AMS), personaliza com nome e cabe em caixa dos
-Correios pequena. Preços são **sugestão de partida**, calculados com a
-fórmula de [`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md);
-ajuste depois dos primeiros 10 pedidos.
+Critérios: imprime sem suporte (ou com suporte mínimo), usa até 2 cores
+com troca manual de filamento, personaliza com nome, data ou logo, e cabe
+em caixa pequena dos Correios. Preços são **sugestão de partida**,
+calculados com a fórmula de
+[`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md).
+Pese e cronometre cada peça depois da primeira impressão e ajuste.
 
-| # | Produto | Personalização | Filamento aprox. | Impressão aprox. | Preço sugerido |
+## Para pessoa física (datas comemorativas)
+
+| # | Produto | Personalização | Filamento | Impressão | Preço sugerido |
 |---|---|---|---|---|---|
-| 1 | **Árvore de Natal de nomes** (5 nomes + "Feliz Natal", 15×18 cm) | Até 5 nomes, 2 cores | ~200 g | ~9 h (2 placas) | R$ 149 (até 5 nomes) · R$ 119 (3 nomes) |
-| 2 | **Enfeite de árvore com nome** (bola/estrela chata, 8 cm) | Nome, 1 cor + furo para fita | ~12 g | ~35 min | R$ 27,90 · kit com 4: R$ 79 |
-| 3 | **Placa de mesa com nome** (festa, escritório, 12×4 cm) | Nome e cargo/frase | ~40 g | ~2 h | R$ 49 |
-| 4 | **Chaveiro com nome** (letras grossas, 6 cm) | Nome, 2 cores | ~8 g | ~25 min | R$ 19,90 · 3 por R$ 49 |
-| 5 | **Porta-celular/suporte de mesa com nome** | Nome na base | ~60 g | ~3 h | R$ 59 |
-| 6 | **Topo de bolo de nome** (Oswald, 15 cm) | Nome + idade | ~25 g | ~1 h 20 | R$ 39 |
+| 1 | **Chaveiro de nome** (letras arredondadas, 6 cm) | nome, 2 cores | ~8 g | ~25 min | R$ 19,90 · 3 por R$ 49 |
+| 2 | **Topo de bolo com nome e idade** (15 cm, palito) | nome + idade, 1 cor | ~25 g | ~1 h 20 | R$ 39 |
+| 3 | **Tag de lembrancinha com nome** (chá de bebê, batizado, 5 cm, furo para fita) | nome e data, 1 cor | ~5 g | ~15 min | R$ 6,90/un a partir de 20 un · R$ 9,90 avulsa |
+| 4 | **Porta-retrato com nome** (10×15 cm, de mesa) | nome ou frase na base | ~70 g | ~3 h 30 | R$ 69 |
+| 5 | **Vaso pequeno com frase** (Dia das Mães, professora, 9 cm) | frase curta, 1 cor | ~45 g | ~2 h 30 | R$ 49 |
+| 6 | **Marcador de lugar para casamento** (nome do convidado, 8 cm) | nome, 1 cor | ~6 g | ~18 min | R$ 7,90/un a partir de 30 un |
+| 7 | **Enfeite de Natal com nome** (bola ou estrela chata, 8 cm) | nome, 1 cor + fita | ~12 g | ~35 min | R$ 27,90 · kit com 4: R$ 79 |
+| 8 | **Suporte de celular com nome** | nome na base | ~60 g | ~3 h | R$ 59 |
+
+## Para empresas e eventos (brindes)
+
+Preço por unidade, **com o logo do cliente em relevo ou em 2 cores**,
+embalado individualmente. Prova física antes do lote.
+
+| # | Produto | 20 un | 50 un | 100 un | Filamento | Impressão/un |
+|---|---|---|---|---|---|---|
+| 9 | **Chaveiro com logo** (5 cm) | R$ 14,90 | R$ 12,90 | R$ 10,90 | ~7 g | ~20 min |
+| 10 | **Porta-crachá / clipe com logo** | R$ 16,90 | R$ 14,90 | R$ 12,90 | ~9 g | ~25 min |
+| 11 | **Suporte de celular com logo** | R$ 44,90 | R$ 39,90 | R$ 34,90 | ~55 g | ~2 h 40 |
+| 12 | **Marcador de página / clipe de papel com logo** | R$ 9,90 | R$ 8,90 | R$ 7,90 | ~4 g | ~12 min |
+| 13 | **Placa de mesa com nome e cargo** (12×4 cm) | R$ 39,90 | R$ 34,90 | R$ 29,90 | ~40 g | ~2 h |
+
+Abaixo de 20 unidades, cobre o preço de varejo. Acima de 100, orçamento à
+parte (e confira a capacidade: 100 suportes de celular são 270 horas de
+impressora, quase 12 dias sem parar).
 
 ## Por que estes
 
-- **Árvore de nomes** é o produto âncora: ticket alto, foto forte, já existe
-  (pasta `arvore_natal_3d/`). É o que vai nos anúncios pagos até 15 de dezembro.
-- **Enfeite e chaveiro** são a porta de entrada: barato, cabe em envelope,
-  gera avaliação rápida no Mercado Livre. Reputação se constrói com volume.
-- **Placa, suporte e topo de bolo** vendem o ano inteiro (volta às aulas,
-  aniversário, Dia das Mães, empresas) e tiram a loja da dependência do Natal.
+- **Chaveiro e tag** são a porta de entrada: barato, cabe em envelope,
+  gera avaliação rápida no Mercado Livre e lote fácil para empresa.
+- **Topo de bolo, porta-retrato e vaso** têm ticket médio bom e foto
+  bonita para o Instagram.
+- **Marcador de lugar e tag** vendem em lote (30 a 100 unidades) para
+  casamento e chá, o que ocupa bem a impressora.
+- **Linha de empresa** usa os mesmos modelos com logo no lugar do nome:
+  um arquivo, dois mercados.
 
-## O que deixar para depois
+## Capacidade: o número que define tudo
 
-- Luminária, vaso e organizador grande: muitas horas de impressão para
-  pouco preço. Só com AMS ou segunda impressora.
-- Qualquer coisa com personagem, time ou logo de empresa alheia.
-- Peças articuladas ("dragão flexível"): mercado saturado no Mercado Livre,
-  preço derrubado por quem vende a R$ 15.
+Uma impressora trabalha no máximo ~20 h/dia com segurança. Some as horas
+dos pedidos da semana antes de aceitar prazo. Quando a fila passar de 70%
+da capacidade por duas semanas seguidas, suba o preço antes de comprar a
+segunda máquina.
 
-## Calendário comercial (o que empurrar em cada mês)
+## Calendário comercial
 
 | Mês | Data | Produto principal |
 |---|---|---|
-| Nov–Dez | Natal (pedidos personalizados até 12/12) | Árvore de nomes, enfeites |
 | Jan–Fev | Volta às aulas | Chaveiro, etiqueta de mochila com nome |
-| Mar | Dia da Mulher, Páscoa | Placa de mesa, cesta com nome |
-| Mai | Dia das Mães | Porta-retrato com nome, topo de bolo |
-| Jun | Namorados | Chaveiro em par, suporte de mesa |
-| Ago | Dia dos Pais | Suporte de mesa, placa com nome |
-| Out | Dia das Crianças | Topo de bolo, placa de porta |
+| Mar | Dia da Mulher (empresas), Páscoa | Chaveiro com logo, tag e cesta com nome |
+| Mai | Dia das Mães | Vaso com frase, porta-retrato |
+| Jun | Namorados, festa junina | Chaveiro em par, marcador de lugar |
+| Ago | Dia dos Pais | Suporte de celular, placa de mesa |
+| Set | Setembro: feiras e eventos corporativos | Brindes com logo, porta-crachá |
+| Out | Dia das Crianças, Dia do Professor | Topo de bolo, vaso com frase |
+| Nov–Dez | Natal e confraternização de empresa (pedidos até 10/12) | Enfeite com nome, kits de brinde |
 
-**Regra do personalizado:** feche o prazo de pedidos de Natal em **12 de
-dezembro**. Depois disso, só venda o que já está impresso (enfeite genérico
-"Feliz Natal", por exemplo).
+Feche o prazo de pedidos personalizados **duas semanas antes** de cada
+data. Depois disso, venda só o que já está impresso.
