@@ -86,11 +86,13 @@ tem o nome da afilhada e chega antes do batizado.
 loja-3d/
 ├── README.md
 ├── catalogo-natal-2026.md             # Natal: 14 produtos reais, preço por canal, kits, anúncios, posts
+├── catalogo-datas-comemorativas.md    # Dia dos Professores e demais datas: lotes, embalagem, calendário
 ├── catalogo-inicial.md                # presentes, brindes, decoração/utilidades e sob encomenda
 ├── checklist-lancamento.md            # 30 dias, dia a dia
 ├── marca/
 │   ├── identidade.md                  # nome, alternativas, cores, fontes, tom de voz, uso do logo
 │   ├── gerar_logo.py                  # regenera o logo com outro nome ou fonte
+│   ├── embalagem/                     # cartão 60×90 e adesivo 40 mm (SVG + folhas A4)
 │   └── logo/                          # SVG + png/ (perfil, 6 capas de destaque, banner)
 ├── instagram/perfil-e-lancamento.md   # @, bio, destaques, 9 posts, rotina, anúncio pago
 ├── mercado-livre/guia-de-anuncios.md  # conta, taxas, títulos, fotos, ficha, personalização, envio
