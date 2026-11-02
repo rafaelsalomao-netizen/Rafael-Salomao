@@ -59,7 +59,7 @@ write("laco3d-logo-horizontal-mono-escuro.svg",round(W),H,horiz(laco(5,2,78,mono
 write("laco3d-logo-horizontal-mono-branco.svg",round(W),H,horiz(laco(5,2,78,mono="#FFFFFF")[0],wordmark(0,0,size,ink="#FFFFFF",accent="#FFFFFF")[0]))
 
 size=42; ic, iw, ih = laco(8,4,120); wm, ww = wordmark(0,0,size)
-tl,tw = word("presentes e brindes impressos em 3D", 9.5, 0, 0, tracking=0.04); W=max(iw,ww,tw)+40; H=ih+24+size+26
+tl,tw = word("estúdio de impressão 3D", 10.5, 0, 0, tracking=0.08); W=max(iw,ww,tw)+40; H=ih+24+size+26
 body=f'<g transform="translate({(W-iw)/2:.2f},12)">{ic}</g>\n<g transform="translate({(W-ww)/2:.2f},{12+ih+24+size:.2f})">{wm}</g>'
 write("laco3d-logo-vertical.svg",round(W),round(H),body)
 write("laco3d-logo-vertical-tagline.svg",round(W),round(H+22),body+f'\n<g transform="translate({(W-tw)/2:.2f},{H+12:.2f})"><path d="{tl}" fill="{ROSE_ESC}"/></g>')

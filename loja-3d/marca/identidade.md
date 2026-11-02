@@ -7,9 +7,13 @@
 Laço é o que fecha um presente e é o vínculo entre quem dá e quem recebe.
 Serve para lembrancinha de chá de bebê e para brinde de empresa ("criar
 laços com clientes"). É curto, fácil de falar e lembrar, e tem imagem
-pronta para o logo.
+pronta para o logo. O "3D" diz o resto: é um **estúdio de impressão 3D**,
+e o nome não prende a nada. Um vaso, um organizador de mesa ou a peça de
+reposição que o cliente mandou saem da mesma marca sem estranheza.
 
-- Tagline: **presentes e brindes impressos em 3D**
+- Tagline: **estúdio de impressão 3D**
+- Descrição (bio, Mercado Livre, Google): *Presentes, brindes, decoração e
+  peças sob encomenda, tudo impresso em 3D.*
 - Frase de marca: *Feito com carinho, um de cada vez.*
 - Uso por escrito: "Laço 3D". Em @ e domínio, sem cedilha: `laco3d`.
 
@@ -127,9 +131,10 @@ mesma pasta.
 ## 5. Tom de voz
 
 Quem compra é quem presenteia com pressa (mãe, madrinha, noiva, organizadora
-de festa) ou quem precisa de 50 brindes para sexta-feira (RH, marketing,
-dono de loja). As duas pessoas querem a mesma coisa: certeza de que vai
-ficar bonito e chegar a tempo.
+de festa), quem precisa de 50 brindes para sexta-feira (RH, marketing,
+dono de loja) ou quem tem um arquivo ou uma peça quebrada e precisa de
+alguém que imprima. Todos querem a mesma coisa: certeza de que vai ficar
+bom e chegar a tempo.
 
 - **Caloroso e direto.** "Chega em 5 dias úteis" em vez de "prazo estimado conforme disponibilidade".
 - **Mostra o processo.** Vídeo da impressora andando e da peça saindo da
@@ -146,3 +151,4 @@ Frases para bio, embalagem e anúncios:
 - Feito com carinho, um de cada vez.
 - Presente que ninguém mais tem, porque tem o nome de quem recebe.
 - Brindes com a cara da sua empresa, a partir de 20 unidades.
+- Tem o arquivo? A gente imprime. Não tem? A gente desenha.

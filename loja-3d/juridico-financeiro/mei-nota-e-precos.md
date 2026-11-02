@@ -130,6 +130,15 @@ O lote ocupa cerca de 17 horas de impressora: menos de um dia. Brinde para
 empresa é o que melhor remunera a hora da máquina; por isso o site tem um
 caminho só para isso.
 
+### Exemplo 3: imprimir o arquivo do cliente
+
+Regra simples e pública, para não orçar do zero: **R$ 0,35 por grama +
+R$ 6 por hora de impressão, mínimo R$ 35**. Um suporte de 80 g e 4 h sai
+por R$ 52. A regra já cobre filamento, energia, máquina e o tempo de
+preparar o arquivo; modelagem (quando não há arquivo) é cobrada à parte
+por hora. PETG ou TPU: +30%. Sem prévia aprovada e pagamento de 50%, não
+imprime.
+
 ### Regras de preço
 
 - **Mesmo preço de varejo em todos os canais.** Diferencie com brinde ou

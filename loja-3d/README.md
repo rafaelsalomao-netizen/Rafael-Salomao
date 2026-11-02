@@ -1,13 +1,17 @@
 # Laço 3D — kit de abertura da loja
 
-Tudo o que precisa existir para a loja de impressão 3D da sua esposa vender
-pela internet: nome, logo, Instagram, Mercado Livre, site com pedido pelo
-WhatsApp, CNPJ e preço. Pensado para dois públicos ao mesmo tempo:
+Tudo o que precisa existir para o estúdio de impressão 3D da sua esposa
+vender pela internet: nome, logo, Instagram, Mercado Livre, site com pedido
+pelo WhatsApp, CNPJ e preço. **Ela faz tudo em impressão 3D**, então a marca
+é um estúdio, não uma loja de um produto só. Três frentes:
 
-- **Pessoa física:** lembrancinhas de datas comemorativas (Dia das Mães,
-  Páscoa, Natal, aniversário, casamento, chá de bebê, batizado).
+- **Presentes e datas comemorativas:** lembrancinhas de Dia das Mães,
+  Páscoa, Natal, aniversário, casamento, chá de bebê, batizado.
 - **Empresas e eventos:** brindes em quantidade (chaveiros com logo,
   porta-crachás, lembranças de evento, kits para feiras).
+- **Decoração, utilidades e sob encomenda:** vasos, organizadores,
+  suportes, peças de reposição e **impressão do arquivo do cliente**
+  (quem já tem o modelo 3D e só precisa de quem imprima).
 
 > **Nome recomendado: Laço 3D.** Justificativa, alternativas (inclusive com
 > o nome dela) e checagem de disponibilidade em [`marca/identidade.md`](marca/identidade.md).
@@ -25,7 +29,7 @@ Onde aparecer `{{NOME}}` nos textos, coloque o nome dela.
 | 1 | [`marca/identidade.md`](marca/identidade.md) | Confirmar o nome, checar @ e domínio, conhecer cores e fontes |
 | 2 | [`marca/logo/`](marca/logo/) | Logo em SVG e PNG (perfil, capas de destaque, banner), prontos |
 | 3 | [`juridico-financeiro/mei-nota-e-precos.md`](juridico-financeiro/mei-nota-e-precos.md) | Abrir o CNPJ dela, nota fiscal e fórmula de preço (varejo e atacado) |
-| 4 | [`catalogo-inicial.md`](catalogo-inicial.md) | Catálogo de largada: 8 produtos para pessoa física e 5 para empresas |
+| 4 | [`catalogo-inicial.md`](catalogo-inicial.md) | Catálogo de largada: presentes, brindes, decoração e utilidades, sob encomenda |
 | 5 | [`instagram/perfil-e-lancamento.md`](instagram/perfil-e-lancamento.md) | Montar o perfil e publicar os 9 primeiros posts |
 | 6 | [`mercado-livre/guia-de-anuncios.md`](mercado-livre/guia-de-anuncios.md) | Cadastrar e publicar os anúncios de varejo |
 | 7 | [`loja-propria/guia.md`](loja-propria/guia.md) + [`site/`](site/) | Publicar o site (presentes + orçamento para empresas) |
@@ -37,9 +41,9 @@ Onde aparecer `{{NOME}}` nos textos, coloque o nome dela.
 
 ```
 INSTAGRAM        → mostra o produto pronto e o processo (desejo + confiança)
-MERCADO LIVRE    → captura quem já procura "lembrancinha personalizada"
-SITE + WHATSAPP  → fecha o pedido personalizado e o orçamento de empresa
-GOOGLE + LINKEDIN→ empresa da cidade procurando "brindes personalizados"
+MERCADO LIVRE    → captura quem já procura "lembrancinha", "vaso 3d", "organizador"
+SITE + WHATSAPP  → fecha pedido personalizado, orçamento de empresa e arquivo do cliente
+GOOGLE           → "impressão 3d perto de mim": empresa, estudante, quem tem um arquivo
 ```
 
 Os dois públicos compram a mesma coisa (uma peça com nome ou logo), mas de
@@ -80,7 +84,7 @@ tem o nome da afilhada e chega antes do batizado.
 ```
 loja-3d/
 ├── README.md
-├── catalogo-inicial.md                # 8 produtos varejo + 5 brindes empresa, preço, tempo
+├── catalogo-inicial.md                # presentes, brindes, decoração/utilidades e sob encomenda
 ├── checklist-lancamento.md            # 30 dias, dia a dia
 ├── marca/
 │   ├── identidade.md                  # nome, alternativas, cores, fontes, tom de voz, uso do logo
@@ -92,5 +96,5 @@ loja-3d/
 ├── juridico-financeiro/
 │   ├── mei-nota-e-precos.md           # MEI, CNAE, DAS, nota fiscal, preço varejo e tabela por quantidade
 │   └── calculadora_preco.py           # preço mínimo a partir de gramas, horas e quantidade
-└── site/index.html                    # página: presentes + orçamento para empresas, pedido pelo WhatsApp
+└── site/index.html                    # página: presentes, empresas e sob encomenda, pedido pelo WhatsApp
 ```

@@ -37,6 +37,37 @@ Abaixo de 20 unidades, cobre o preço de varejo. Acima de 100, orçamento à
 parte (e confira a capacidade: 100 suportes de celular são 270 horas de
 impressora, quase 12 dias sem parar).
 
+## Decoração e utilidades (pronta entrega e sob medida)
+
+São os produtos que vendem o ano inteiro, sem data, e que mostram que o
+estúdio faz **de tudo**. Podem ficar em pronta entrega nas cores da marca.
+
+| # | Produto | Personalização | Filamento | Impressão | Preço sugerido |
+|---|---|---|---|---|---|
+| 14 | **Vaso geométrico** (12 cm, modo vaso) | cor; opcional nome na base | ~60 g | ~2 h 30 | R$ 49 |
+| 15 | **Organizador de mesa** (canetas, celular, post-it) | cor; opcional nome | ~120 g | ~5 h | R$ 79 |
+| 16 | **Porta-joias / bandeja com tampa** | cor; opcional inicial na tampa | ~90 g | ~4 h | R$ 69 |
+| 17 | **Suporte de headset ou controle** | cor | ~110 g | ~5 h | R$ 69 |
+| 18 | **Porta-sabonete / bandeja de banheiro drenante** | cor | ~45 g | ~2 h | R$ 39 |
+| 19 | **Cabide ou gancho decorativo** (nuvem, coração, inicial) | forma e cor | ~30 g | ~1 h 20 | R$ 29 · 3 por R$ 75 |
+
+## Sob encomenda (arquivo do cliente ou peça sob medida)
+
+É o serviço que ninguém da vizinhança oferece e que o Google traz
+("impressão 3d perto de mim"): estudante com um projeto, maker sem
+impressora, alguém com a peça da geladeira quebrada, empresa que quer um
+protótipo.
+
+| Serviço | Como cobrar |
+|---|---|
+| **Imprimir o arquivo do cliente** (STL/3MF) | R$ 0,35 por grama + R$ 6 por hora de impressão, mínimo R$ 35 por pedido. Cliente escolhe cor; PLA padrão, PETG +30% |
+| **Modelar a peça** (sem arquivo: foto, medidas ou peça quebrada) | R$ 60 a 120 por hora de modelagem (orçar antes), mínimo R$ 80, + impressão pela regra acima |
+| **Protótipo para empresa** | Orçamento por projeto: modelagem + impressão + 2 revisões incluídas |
+
+Regras: prévia e preço fechados **antes** de imprimir; arquivo de terceiros
+só com licença que permita; peças de segurança (freio, elétrica, contato
+com alimento) a loja não imprime, e diz isso no orçamento.
+
 ## Por que estes
 
 - **Chaveiro e tag** são a porta de entrada: barato, cabe em envelope,
@@ -47,6 +78,10 @@ impressora, quase 12 dias sem parar).
   casamento e chá, o que ocupa bem a impressora.
 - **Linha de empresa** usa os mesmos modelos com logo no lugar do nome:
   um arquivo, dois mercados.
+- **Decoração e utilidades** ocupam a impressora nos dias sem pedido e
+  viram pronta entrega e foto de vitrine.
+- **Sob encomenda** remunera a hora sem depender de data comemorativa e
+  traz o público que procura "impressão 3D" no Google.
 
 ## Capacidade: o número que define tudo
 

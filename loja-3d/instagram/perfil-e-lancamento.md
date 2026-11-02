@@ -17,22 +17,23 @@ Ordem de preferência: `@laco3d` → `@laco.3d` → `@laco3d.oficial`.
 ## 3. Nome de exibição (o campo que a busca indexa)
 
 ```
-Laço 3D | Lembrancinhas e brindes
+Laço 3D | Impressão 3D personalizada
 ```
 
-Quem digita "lembrancinha personalizada" ou "brindes" na busca encontra a
-loja. Só "Laço 3D" não encontra ninguém que ainda não conhece.
+Quem digita "impressão 3d", "lembrancinha personalizada" ou "brindes" na
+busca encontra o estúdio. Só "Laço 3D" não encontra ninguém.
 
 ## 4. Bio (150 caracteres)
 
 ```
-Lembrancinhas e brindes impressos em 3D, com o seu nome 🎀
-Datas comemorativas, casamentos e empresas
-Feito com carinho, um de cada vez · envio p/ todo o Brasil
+Estúdio de impressão 3D 🎀
+Presentes, brindes p/ empresas, decoração e peças sob encomenda
+Tem o arquivo? A gente imprime. Não tem? A gente desenha
 👇 Peça o seu
 ```
 
-Troque a segunda linha conforme a época ("Dia das Mães: pedidos até 05/05").
+Em datas comemorativas, troque a terceira linha pelo prazo ("Dia das Mães:
+pedidos até 05/05").
 
 ## 5. Link da bio
 
@@ -40,7 +41,8 @@ O próprio site (`site/index.html` publicado), que já tem os caminhos:
 
 1. Quero um presente (pedido pelo WhatsApp)
 2. Sou empresa (orçamento por quantidade)
-3. Comprar no Mercado Livre (parcelar com garantia da plataforma)
+3. Tenho um arquivo ou uma peça sob medida (orçamento)
+4. Comprar no Mercado Livre (parcelar com garantia da plataforma)
 
 Link do WhatsApp com mensagem pronta (troque o número):
 
@@ -55,17 +57,17 @@ https://wa.me/55DDDNUMERO?text=Oi!%20Vim%20pelo%20Instagram%20da%20La%C3%A7o%203
 
 | Destaque | O que vai dentro |
 |---|---|
-| **Presentes** | Um story por produto de varejo: foto, tamanho, preço, "peça no link" |
+| **Presentes** | Um story por produto de varejo: foto, tamanho, preço, "peça no link". Inclui a data da vez |
 | **Para empresas** | Kit de amostra com logo, tabela por quantidade, prazo, nota fiscal, "peça orçamento" |
+| **Sob encomenda** | Arquivo do cliente impresso, peça de reposição refeita, protótipo. Como cobra, o que não imprime |
 | **Como pedir** | Passo a passo: WhatsApp → prévia em 24 h → produção → envio |
 | **Bastidores** | Impressora rodando, troca de cor, acabamento, embalagem com a fita |
 | **Clientes** | Fotos enviadas, prints de avaliação (com autorização) |
-| **Datas** | A data da vez: Natal, Dia das Mães, Páscoa. Trocar a cada temporada |
 
 ## 7. Mensagem automática do direct
 
 > Oi! Aqui é a {{NOME}}, da Laço 3D 🎀
-> Me conta: é presente para quem e para quando? Ou é para a sua empresa? Com isso já te digo o que dá para fazer e o prazo certinho.
+> Me conta: é presente para quem e para quando? É para a sua empresa? Ou você já tem um arquivo ou uma peça para a gente imprimir? Com isso já te digo o que dá para fazer e o prazo certinho.
 
 "Para quem e para quando" resolve a maior parte da conversa: define
 produto, cor e se o prazo é viável. "Ou é para a sua empresa?" separa o
@@ -83,15 +85,15 @@ Alterne produto, processo e prova; dois dos nove falam com empresas.
 | 4 | Foto | Topo de bolo com nome em um bolo de verdade |
 | 5 | Carrossel | "Como pedir em 4 passos": nome → cores → prévia → entrega |
 | 6 | Reels | 30 chaveiros com logo saindo juntos da impressora. Texto: "Brinde para a sua equipe, a partir de 20 unidades" |
-| 7 | Foto | Mesa de casamento com marcadores de lugar com nome |
+| 7 | Reels | Peça quebrada (puxador, engrenagem, suporte) ao lado da peça nova impressa. Texto: "Tem uma peça quebrada? Manda foto" |
 | 8 | Carrossel | "Para empresas": kit de amostra, tabela por quantidade, prazo, nota fiscal |
 | 9 | Foto | Logo + "Feito com carinho, um de cada vez" + a data da temporada |
 
 Legenda padrão: produto em uma frase → tamanho e cores → prazo → "Peça
 pelo link da bio". Hashtags, 5 a 8:
-`#lembrancinhapersonalizada #presentepersonalizado #impressao3d
-#lembrancinhas #brindespersonalizados #brindescorporativos #chadebebe
-#casamento #presentecomnome`.
+`#impressao3d #impressora3d #lembrancinhapersonalizada #presentepersonalizado
+#brindespersonalizados #brindescorporativos #decoracao3d #chadebebe
+#casamento` e, nos posts de serviço, `#impressao3d[suacidade]`.
 
 ## 9. Rotina (40 minutos por dia)
 

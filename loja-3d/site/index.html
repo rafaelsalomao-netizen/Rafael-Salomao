@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Edite estas linhas à mão (buscadores leem antes do JavaScript) -->
-<title>Laço 3D — Lembrancinhas e brindes personalizados impressos em 3D</title>
-<meta name="description" content="Lembrancinhas para datas comemorativas, casamentos e chá de bebê, e brindes com logo para empresas. Impressão 3D personalizada com nome, feita com carinho, envio para todo o Brasil.">
-<meta property="og:title" content="Laço 3D — presentes e brindes impressos em 3D">
-<meta property="og:description" content="Lembrancinhas personalizadas e brindes com logo para empresas. Peça pelo WhatsApp.">
+<title>Laço 3D — Estúdio de impressão 3D: presentes, brindes, decoração e peças sob encomenda</title>
+<meta name="description" content="Estúdio de impressão 3D: lembrancinhas para datas comemorativas, brindes com logo para empresas, decoração, utilidades e impressão do seu arquivo ou peça sob medida. Envio para todo o Brasil.">
+<meta property="og:title" content="Laço 3D — estúdio de impressão 3D">
+<meta property="og:description" content="Presentes, brindes, decoração e peças sob encomenda, tudo impresso em 3D. Peça pelo WhatsApp.">
 <meta name="theme-color" content="#D98C9A">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,9 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--areia
 @media (max-width:820px){.hero .grid{grid-template-columns:1fr}}
 .hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--cacau-2);max-width:52ch}
 .caminhos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.caminhos .enc{grid-column:1 / -1}
 @media (max-width:520px){.caminhos{grid-template-columns:1fr}}
+.caminho.enc{border-color:var(--lilas)}
 .caminho{display:block;text-decoration:none;color:var(--cacau);background:var(--cartao);border:1px solid var(--linha);border-radius:18px;padding:18px 20px;box-shadow:var(--sombra);transition:transform .15s}
 .caminho:hover{transform:translateY(-2px)}
 .caminho b{display:block;font:600 19px var(--display);margin-bottom:4px}
@@ -97,6 +99,11 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--areia
 .empresas .eyebrow{color:var(--salvia)}
 .empresas .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
 @media (max-width:820px){.empresas .grid{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+#encomenda table{background:var(--cartao)}
+#encomenda td{color:var(--cacau-2)}
+#encomenda td b{color:var(--cacau)}
 .tw{overflow-x:auto;border:1px solid var(--linha);border-radius:14px}
 table{border-collapse:collapse;width:100%;min-width:420px;font-size:15px}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--linha)}
@@ -153,7 +160,9 @@ footer a{color:var(--cacau-2)}
     <a class="marca" href="#" aria-label="Laço 3D, início"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" >  <g transform="translate(2.96,13.04)"><defs><clipPath id="cl584"><path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z"/><path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z"/></clipPath></defs> <path d="M45.32 30.56 L25.16 65.84 L34.40 63.32 L36.92 69.20 L47.84 35.60 Z" fill="#B9A6D9" stroke="#B9A6D9" stroke-width="2.52" stroke-linejoin="round"/> <path d="M48.68 30.56 L68.84 65.84 L59.60 63.32 L57.08 69.20 L46.16 35.60 Z" fill="#B9A6D9" stroke="#B9A6D9" stroke-width="2.52" stroke-linejoin="round"/> <path d="M47.00 27.20 C40.28 -1.36 -0.04 -3.04 5.00 22.16 C8.36 41.48 35.24 42.32 47.00 27.20 Z" fill="#D98C9A"/> <path d="M47.00 27.20 C53.72 -1.36 94.04 -3.04 89.00 22.16 C85.64 41.48 58.76 42.32 47.00 27.20 Z" fill="#D98C9A"/> <rect x="5.00" y="11.16" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="5.00" y="18.72" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="5.00" y="26.28" width="84.00" height="1.85" fill="#FFFFFF" opacity="0.5" clip-path="url(#cl584)"/> <rect x="40.70" y="20.06" width="12.60" height="14.28" rx="4.20" fill="#3E3237"/></g> </svg> Laço<span>3D</span></a>
     <nav>
       <a href="#presentes">Presentes</a>
+      <a href="#decoracao">Decoração</a>
       <a href="#empresas">Para empresas</a>
+      <a href="#encomenda">Sob encomenda</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
@@ -164,12 +173,13 @@ footer a{color:var(--cacau-2)}
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow">Impressão 3D personalizada</div>
-      <h1>Presentes e brindes com o nome de quem recebe.</h1>
-      <p class="lead">Lembrancinhas para datas comemorativas, casamentos e chá de bebê. Brindes com o logo da sua empresa, a partir de 20 unidades. Feito com carinho, um de cada vez.</p>
+      <div class="eyebrow">Estúdio de impressão 3D</div>
+      <h1>Tudo o que dá para imprimir em 3D, feito para você.</h1>
+      <p class="lead">Lembrancinhas para datas comemorativas, brindes com o logo da sua empresa, decoração e utilidades para a casa, e a impressão do seu arquivo ou da peça que quebrou. Feito com carinho, um de cada vez.</p>
       <div class="caminhos">
         <a class="caminho" href="#pedido" data-aba="presente"><b>Quero um presente 🎀</b><small>Nome, cores e data. Prévia em 24 h, produção em {{PRAZO_PRODUCAO}}.</small></a>
         <a class="caminho emp" href="#pedido" data-aba="empresa"><b>Sou empresa</b><small>Orçamento por quantidade, prova física antes do lote e nota fiscal.</small></a>
+        <a class="caminho enc" href="#pedido" data-aba="encomenda"><b>Tenho um arquivo ou uma peça</b><small>Imprimimos o seu STL ou desenhamos a peça a partir de foto e medidas.</small></a>
       </div>
       <div class="fatos">
         <span>Envio para <b>todo o Brasil</b></span>
@@ -186,6 +196,14 @@ footer a{color:var(--cacau-2)}
     <div class="eyebrow">Para presentear</div>
     <h2>Escolha o produto. O nome, você diz na hora do pedido.</h2>
     <div class="produtos" id="lista-produtos"></div>
+  </div>
+</section>
+
+<section id="decoracao" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--salvia)">Decoração e utilidades</div>
+    <h2>Para a casa e a mesa de trabalho, em pronta entrega.</h2>
+    <div class="produtos" id="lista-decoracao"></div>
   </div>
 </section>
 
@@ -218,6 +236,26 @@ footer a{color:var(--cacau-2)}
   </div>
 </section>
 
+<section id="encomenda" style="background:var(--lilas-suave)">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">Sob encomenda</div>
+      <h2>Tem o arquivo? A gente imprime. Não tem? A gente desenha.</h2>
+      <p style="color:var(--cacau-2)">Projeto da faculdade, miniatura, suporte que não existe na loja, puxador do armário, peça da geladeira que quebrou, protótipo para a sua empresa. Mande o arquivo (STL ou 3MF) ou uma foto com as medidas.</p>
+      <a class="btn btn-rose" href="#pedido" data-aba="encomenda">Pedir orçamento</a>
+    </div>
+    <div class="tw" style="background:var(--cartao)"><table>
+      <thead><tr><th>Serviço</th><th>Preço</th></tr></thead>
+      <tbody>
+        <tr><td><b>Imprimir o seu arquivo</b> (PLA, cor à escolha)</td><td>R$ 0,35 por grama + R$ 6 por hora de impressão · mínimo R$ 35</td></tr>
+        <tr><td><b>PETG ou flexível</b></td><td>+30% sobre o valor acima</td></tr>
+        <tr><td><b>Desenhar a peça</b> (a partir de foto, medidas ou peça quebrada)</td><td>por hora de modelagem, orçado antes · mínimo R$ 80</td></tr>
+        <tr><td><b>Protótipo para empresa</b></td><td>orçamento por projeto, com 2 revisões incluídas</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
 <section id="como-funciona">
   <div class="wrap">
     <div class="eyebrow">Como funciona</div>
@@ -242,11 +280,12 @@ footer a{color:var(--cacau-2)}
     <div>
       <div class="abas" role="tablist">
         <button type="button" role="tab" id="aba-presente" aria-selected="true" aria-controls="form-presente">Presente</button>
-        <button type="button" role="tab" id="aba-empresa" aria-selected="false" aria-controls="form-empresa">Empresa / evento</button>
+        <button type="button" role="tab" id="aba-empresa" aria-selected="false" aria-controls="form-empresa">Empresa</button>
+        <button type="button" role="tab" id="aba-encomenda" aria-selected="false" aria-controls="form-encomenda">Arquivo / peça</button>
       </div>
       <form id="form-presente" role="tabpanel" aria-labelledby="aba-presente">
         <label>Produto<select id="p-produto" name="produto" required></select></label>
-        <label>Nomes (um por linha)<textarea id="p-nomes" name="nomes" placeholder="HELENA&#10;MIGUEL" required></textarea></label>
+        <label>Nomes ou personalização (um por linha; escreva "sem nome" se não quiser)<textarea id="p-nomes" name="nomes" placeholder="HELENA&#10;MIGUEL" required></textarea></label>
         <div class="row2">
           <label>Cores<input id="p-cores" name="cores" placeholder="rosa e lilás"></label>
           <label>Precisa receber até<input id="p-data" name="data" type="date"></label>
@@ -274,6 +313,22 @@ footer a{color:var(--cacau-2)}
         <button class="btn btn-rose" type="submit">Pedir orçamento pelo WhatsApp</button>
         <p class="mini">Respondemos em até 24 h úteis com valor, prazo e prova. Tem o logo em arquivo? Mande na conversa.</p>
       </form>
+      <form id="form-encomenda" role="tabpanel" aria-labelledby="aba-encomenda" hidden>
+        <label>O que você precisa<select id="c-tipo" name="tipo">
+          <option>Imprimir um arquivo que já tenho (STL/3MF)</option><option>Desenhar e imprimir uma peça (tenho foto e medidas)</option><option>Refazer uma peça quebrada</option><option>Protótipo para a minha empresa</option>
+        </select></label>
+        <label>Descreva a peça (para que serve, tamanho aproximado, quantas unidades)<textarea id="c-desc" name="desc" placeholder="Suporte de parede para controle, uns 12 cm, 2 unidades." required></textarea></label>
+        <div class="row2">
+          <label>Material e cor<input id="c-mat" name="mat" placeholder="PLA preto (ou não sei)"></label>
+          <label>Precisa receber até<input id="c-data" name="data" type="date"></label>
+        </div>
+        <div class="row2">
+          <label>Seu nome<input id="c-cliente" name="cliente" placeholder="Como quer ser chamado(a)"></label>
+          <label>Cidade e UF<input id="c-cidade" name="cidade" placeholder="Para calcular o frete"></label>
+        </div>
+        <button class="btn btn-rose" type="submit">Pedir orçamento pelo WhatsApp</button>
+        <p class="mini">Mande o arquivo ou as fotos na conversa. Respondemos com valor e prazo em até 24 h úteis. Não imprimimos peças de segurança (freio, elétrica, contato com alimento).</p>
+      </form>
     </div>
   </div>
 </section>
@@ -289,6 +344,7 @@ footer a{color:var(--cacau-2)}
       <details><summary>Qual o prazo?</summary><p>{{PRAZO_PRODUCAO}} para produzir depois da prévia aprovada, mais o prazo dos Correios para a sua cidade. Para datas comemorativas, peça com duas semanas de antecedência.</p></details>
       <details><summary>Posso trocar ou devolver?</summary><p>Peça personalizada é feita só para você, por isso não tem troca por arrependimento depois da prévia aprovada. Se chegar com defeito ou quebrada, a gente refaz sem custo. É só mandar a foto.</p></details>
       <details><summary>É brinquedo? Pode ir em contato com alimento?</summary><p>Não. São lembrancinhas e peças decorativas, com partes pequenas; mantenha fora do alcance de crianças menores de 3 anos. O topo de bolo vai no palito, fora do bolo.</p></details>
+      <details><summary>Vocês imprimem o meu arquivo?</summary><p>Sim. Mande o STL ou 3MF pelo WhatsApp com a cor desejada; respondemos com peso, tempo e valor pela regra de R$ 0,35 por grama + R$ 6 por hora, mínimo R$ 35. Arquivo de terceiros só com licença que permita a impressão. Não tem o arquivo? Mande foto e medidas que a gente desenha.</p></details>
       <details><summary>Vocês emitem nota fiscal?</summary><p>Sim, em todo pedido, para pessoa física e para empresa.</p></details>
     </div>
   </div>
@@ -338,45 +394,68 @@ const PRODUTOS = [
   { id:"suporte",   nome:"Suporte de celular com nome", desc:"Apoio de mesa firme, com o nome na base. Funciona com capinha.", preco:"R$ 59", nota:"", img:"" },
 ];
 
+/* Decoração e utilidades: podem ficar em pronta entrega nas cores da marca. */
+const DECORACAO = [
+  { id:"vaso",        nome:"Vaso geométrico",              desc:"12 cm, para suculenta ou flor seca. Cor à escolha; nome na base é opcional.", preco:"R$ 49", nota:"pronta entrega", img:"" },
+  { id:"organizador", nome:"Organizador de mesa",          desc:"Canetas, celular e post-it no mesmo lugar. Cor à escolha, nome opcional.", preco:"R$ 79", nota:"", img:"" },
+  { id:"portajoias",  nome:"Porta-joias com tampa",        desc:"Bandeja com tampa e divisórias. Inicial na tampa é opcional.", preco:"R$ 69", nota:"", img:"" },
+  { id:"headset",     nome:"Suporte de headset ou controle", desc:"Para a mesa do home office ou do videogame. Cor à escolha.", preco:"R$ 69", nota:"", img:"" },
+  { id:"sabonete",    nome:"Porta-sabonete drenante",      desc:"Bandeja de banheiro que escorre a água. Cor à escolha.", preco:"R$ 39", nota:"pronta entrega", img:"" },
+  { id:"gancho",      nome:"Gancho ou cabide decorativo",  desc:"Nuvem, coração ou inicial, para quarto de criança ou entrada.", preco:"R$ 29", nota:"3 por R$ 75", img:"" },
+];
+
 /* ---- não precisa mexer daqui para baixo ---- */
 document.body.innerHTML = document.body.innerHTML.replace(/\{\{(\w+)\}\}/g, (m,k) => DADOS[k] ?? m);
 
-const lista = document.getElementById("lista-produtos"), sel = document.getElementById("p-produto");
-PRODUTOS.forEach(p => {
-  const card = document.createElement("article"); card.className = "card";
-  card.innerHTML = `<div class="img">${p.img ? `<img src="${p.img}" alt="${p.nome}" loading="lazy">` : `${p.nome}`}</div>
-    <div class="body"><h3>${p.nome}</h3><p>${p.desc}</p>
-    <div class="foot"><div class="preco">${p.preco}${p.nota ? `<br><small>${p.nota}</small>` : ""}</div><button type="button" data-id="${p.id}">Pedir</button></div></div>`;
-  lista.appendChild(card);
-  const o = document.createElement("option"); o.value = p.id; o.textContent = `${p.nome} — ${p.preco}`; sel.appendChild(o);
-});
+const lista = document.getElementById("lista-produtos"), listaDeco = document.getElementById("lista-decoracao"), sel = document.getElementById("p-produto");
+const TODOS = [...PRODUTOS, ...DECORACAO];
+function montar(itens, alvo) {
+  itens.forEach(p => {
+    const card = document.createElement("article"); card.className = "card";
+    card.innerHTML = `<div class="img">${p.img ? `<img src="${p.img}" alt="${p.nome}" loading="lazy">` : `${p.nome}`}</div>
+      <div class="body"><h3>${p.nome}</h3><p>${p.desc}</p>
+      <div class="foot"><div class="preco">${p.preco}${p.nota ? `<br><small>${p.nota}</small>` : ""}</div><button type="button" data-id="${p.id}">Pedir</button></div></div>`;
+    alvo.appendChild(card);
+    const o = document.createElement("option"); o.value = p.id; o.textContent = `${p.nome} — ${p.preco}`; sel.appendChild(o);
+  });
+}
+montar(PRODUTOS, lista); montar(DECORACAO, listaDeco);
 
-const abas = { presente: document.getElementById("aba-presente"), empresa: document.getElementById("aba-empresa") };
-const forms = { presente: document.getElementById("form-presente"), empresa: document.getElementById("form-empresa") };
+const abas = { presente: document.getElementById("aba-presente"), empresa: document.getElementById("aba-empresa"), encomenda: document.getElementById("aba-encomenda") };
+const forms = { presente: document.getElementById("form-presente"), empresa: document.getElementById("form-empresa"), encomenda: document.getElementById("form-encomenda") };
 function mostrar(aba) { for (const k in abas) { abas[k].setAttribute("aria-selected", String(k === aba)); forms[k].hidden = k !== aba; } }
-abas.presente.onclick = () => mostrar("presente"); abas.empresa.onclick = () => mostrar("empresa");
+for (const k in abas) abas[k].onclick = () => mostrar(k);
 document.querySelectorAll("[data-aba]").forEach(a => a.addEventListener("click", () => mostrar(a.dataset.aba)));
-lista.addEventListener("click", e => {
-  const b = e.target.closest("button[data-id]"); if (!b) return;
+document.addEventListener("click", e => {
+  const b = e.target.closest(".card button[data-id]"); if (!b) return;
   mostrar("presente"); sel.value = b.dataset.id;
   document.getElementById("pedido").scrollIntoView({behavior:"smooth"});
   setTimeout(() => document.getElementById("p-nomes").focus(), 500);
 });
 
 const zap = t => `https://wa.me/55${DADOS.WHATSAPP}?text=${encodeURIComponent(t)}`;
-document.getElementById("zap-flutuante").href = zap("Oi! Vim pelo site da Laço 3D e quero um presente personalizado.");
+document.getElementById("zap-flutuante").href = zap("Oi! Vim pelo site da Laço 3D e quero fazer um pedido.");
 const v = id => document.getElementById(id).value.trim();
 const br = d => d ? d.split("-").reverse().join("/") : "";
 
 forms.presente.addEventListener("submit", e => {
   e.preventDefault();
-  const prod = PRODUTOS.find(p => p.id === v("p-produto"));
+  const prod = TODOS.find(p => p.id === v("p-produto"));
   const nomes = v("p-nomes").split("\n").map(s => s.trim()).filter(Boolean).join(", ");
   const msg = [`Oi! Quero fazer um pedido na Laço 3D 🎀`, ``,
-    `*Produto:* ${prod.nome} (${prod.preco})`, `*Nomes:* ${nomes}`,
+    `*Produto:* ${prod.nome} (${prod.preco})`, `*Nomes / personalização:* ${nomes}`,
     v("p-cores") && `*Cores:* ${v("p-cores")}`, v("p-data") && `*Preciso receber até:* ${br(v("p-data"))}`,
     v("p-cliente") && `*Meu nome:* ${v("p-cliente")}`, v("p-cidade") && `*Cidade:* ${v("p-cidade")}`,
     ``, `Pode me mandar a prévia e o valor com frete?`].filter(l => l !== "" || true).filter(l => l !== undefined && l !== false).join("\n");
+  window.open(zap(msg), "_blank", "noopener");
+});
+forms.encomenda.addEventListener("submit", e => {
+  e.preventDefault();
+  const msg = [`Olá! Quero um orçamento de impressão 3D sob encomenda com a Laço 3D.`, ``,
+    `*Tipo:* ${v("c-tipo")}`, `*Peça:* ${v("c-desc")}`,
+    v("c-mat") && `*Material e cor:* ${v("c-mat")}`, v("c-data") && `*Preciso receber até:* ${br(v("c-data"))}`,
+    v("c-cliente") && `*Meu nome:* ${v("c-cliente")}`, v("c-cidade") && `*Cidade:* ${v("c-cidade")}`,
+    ``, `Vou mandar o arquivo ou as fotos aqui na conversa.`].filter(l => l !== undefined && l !== false).join("\n");
   window.open(zap(msg), "_blank", "noopener");
 });
 forms.empresa.addEventListener("submit", e => {

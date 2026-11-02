@@ -46,7 +46,17 @@ Vaso Decorativo Personalizado Com Frase Presente Professora 3d
 Marcador De Lugar Casamento Nome Convidado Personalizado 30 Un
 Enfeite De Natal Com Nome Personalizado Bola Árvore Kit 4 Un
 Suporte Celular Mesa Personalizado Com Nome Presente 3d
+Vaso Decorativo Geométrico Impressão 3d Para Suculenta 12cm
+Organizador De Mesa Escritório Porta Caneta Celular Impressão 3d
+Suporte Para Headset Fone De Mesa Impressão 3d
+Porta Joias Com Tampa Personalizado Inicial Impressão 3d
 ```
+
+Produtos de decoração e utilidades vendem sem personalização: deixe em
+**pronta entrega** (despacho em 1 dia) nas cores da marca; é o que o
+algoritmo mais favorece. **Serviço de impressão de arquivo não se anuncia
+no Mercado Livre** (a plataforma não aceita bem anúncio de serviço sob
+orçamento); isso vai para o site, o Google e o Instagram.
 
 Digite o produto na busca do Mercado Livre e veja o que o autocompletar
 sugere; essas palavras vão no título.

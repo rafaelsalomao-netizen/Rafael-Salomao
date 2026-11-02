@@ -10,7 +10,7 @@ e no Instagram, primeiro orçamento de empresa enviado) em 30 dias.
 - [ ] Registrar o domínio
 - [ ] Abrir o MEI **no nome dela** (ou a alternativa indicada em `juridico-financeiro/`)
 - [ ] Abrir conta bancária PJ gratuita e WhatsApp Business em número separado
-- [ ] Imprimir **uma unidade de cada** produto do catálogo nas cores da marca
+- [ ] Imprimir **uma unidade de cada** produto do catálogo nas cores da marca (presentes, brindes e decoração; a decoração vira pronta entrega)
 - [ ] Cronometrar e pesar cada peça (preenche a calculadora de preço)
 - [ ] Comprar embalagem: caixa Correios nº 1 e nº 2, envelope bolha, papel de seda, fita de cetim rosé, adesivo com o laço
 
@@ -32,7 +32,7 @@ e no Instagram, primeiro orçamento de empresa enviado) em 30 dias.
 - [ ] Publicar os 8 anúncios de varejo (`mercado-livre/guia-de-anuncios.md`)
 - [ ] Configurar a mensagem automática pós-venda pedindo nome, data e cores
 - [ ] Primeira venda real para alguém conhecido, com avaliação
-- [ ] Criar o **Perfil da Empresa no Google** (gratuito) com "brindes personalizados" e "lembrancinhas" na descrição
+- [ ] Criar o **Perfil da Empresa no Google** (gratuito), categoria "Serviço de impressão 3D", com "brindes", "lembrancinhas" e "peças sob encomenda" na descrição
 - [ ] Configurar emissão de nota fiscal
 
 ## Semana 4 — tração e empresas

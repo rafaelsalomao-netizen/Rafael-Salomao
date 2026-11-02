@@ -9,6 +9,9 @@ servidor, sem mensalidade. Tem dois caminhos:
   site abre o WhatsApp com o pedido formatado.
 - **Sou empresa:** informa produto, quantidade, prazo e se tem o logo em
   arquivo, e o site abre o WhatsApp com o pedido de orçamento formatado.
+- **Tenho um arquivo / peça sob medida:** descreve a peça, se tem o
+  arquivo, material e cor, e o site abre o WhatsApp pedindo o orçamento (o
+  arquivo vai na própria conversa).
 
 Por que começar assim e não com carrinho:
 
@@ -57,11 +60,12 @@ O que configurar:
 
 ## Canais para empresas (sem custo)
 
-- **Perfil da Empresa no Google** (antigo Google Meu Negócio): gratuito.
-  Categoria "Loja de brindes" + "Loja de presentes". Descrição com
-  "brindes personalizados", "lembrancinhas", "impressão 3D" e a cidade.
-  Fotos do kit de amostra. É onde o RH da empresa da sua cidade procura
-  "brindes personalizados perto de mim".
+- **Perfil da Empresa no Google** (antigo Google Meu Negócio): gratuito e
+  o canal mais importante para "faz de tudo". Categoria principal
+  **"Serviço de impressão 3D"**, secundárias "Loja de brindes" e "Loja de
+  presentes". Descrição com "impressão 3D", "brindes personalizados",
+  "lembrancinhas", "peças sob encomenda" e a cidade. É onde aparecem
+  "impressão 3d perto de mim" e "brindes personalizados perto de mim".
 - **LinkedIn** pessoal dela: um post por semana mostrando um lote de
   brindes com logo (com autorização do cliente). Público de RH e marketing
   está lá.
