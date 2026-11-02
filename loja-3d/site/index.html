@@ -112,6 +112,10 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 tr:last-child td{border-bottom:0}
 .empresas ul{padding-left:20px;color:var(--cacau-2);margin:0 0 20px}
 .empresas li{margin-bottom:8px}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.galeria figure{margin:0}
+.galeria img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid var(--linha)}
+.galeria figcaption{font-size:13px;color:var(--cacau-2);margin-top:8px;line-height:1.4}
 
 .passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin-top:36px;counter-reset:p}
 .passo{padding:22px;border-radius:16px;background:var(--cartao);border:1px solid var(--linha)}
@@ -224,13 +228,17 @@ footer a{color:var(--cacau-2)}
     <div class="grid" style="margin-top:28px">
       <div>
         <ul>
-          <li><b>Seu logo em relevo ou em duas cores</b>, a partir do arquivo que você já tem (PNG, PDF ou vetor).</li>
+          <li><b>Seu logo em relevo ou em duas cores</b>, a partir do arquivo que você já tem (PNG, PDF ou vetor). Ou no <b>cartão personalizado</b> que acompanha cada peça, com o nome e o @ do seu negócio.</li>
           <li><b>Prova física antes do lote:</b> você recebe uma unidade, aprova, e só então produzimos.</li>
           <li><b>Nota fiscal</b> e pagamento por Pix ou boleto. Lotes acima de R$ 1.000: metade na aprovação, metade na entrega.</li>
           <li><b>Embalagem individual</b> com saquinho e fita, pronta para distribuir.</li>
           <li><b>Prazo:</b> prova em 3 dias úteis; lote de 50 peças em até 7 dias úteis após a aprovação.</li>
         </ul>
         <a class="btn btn-cacau" href="#pedido" data-aba="empresa">Pedir orçamento</a>
+        <div class="galeria">
+          <figure><img src="img/empresas/brindes-petshop-dupla.jpg" alt="Pá de ração chaveiro e suporte de celular cachorro, embalados com laço e cartão de pet shop" loading="lazy"><figcaption>Fim de ano para pet shop: pá de ração chaveiro e suporte de celular, com o cartão do cliente</figcaption></figure>
+          <figure><img src="img/empresas/suporte-cachorro-embalado.jpg" alt="Suporte de celular em formato de cachorro embalado com cartão e laço" loading="lazy"><figcaption>Cada peça sai pronta para entregar: saquinho, laço e cartão com o logo e o @ do seu negócio</figcaption></figure>
+        </div>
       </div>
       <div class="tw"><table>
         <thead><tr><th>Produto com logo</th><th>20 un</th><th>50 un</th><th>100 un</th></tr></thead>
@@ -240,6 +248,8 @@ footer a{color:var(--cacau-2)}
           <tr><td>Marcador de página</td><td class="n">R$ 9,90</td><td class="n">R$ 8,90</td><td class="n">R$ 7,90</td></tr>
           <tr><td>Placa de mesa (nome e cargo)</td><td class="n">R$ 39,90</td><td class="n">R$ 34,90</td><td class="n">R$ 29,90</td></tr>
           <tr><td>Suporte de celular</td><td class="n">R$ 44,90</td><td class="n">R$ 39,90</td><td class="n">R$ 34,90</td></tr>
+          <tr><td>Pá de ração chaveiro (pet shop)</td><td class="n">R$ 19,90</td><td class="n">R$ 17,90</td><td class="n">R$ 15,90</td></tr>
+          <tr><td>Suporte de celular cachorro (pet shop)</td><td class="n">R$ 27,90</td><td class="n">R$ 24,90</td><td class="n">R$ 22,90</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -309,7 +319,7 @@ footer a{color:var(--cacau-2)}
       </form>
       <form id="form-empresa" role="tabpanel" aria-labelledby="aba-empresa" hidden>
         <label>Produto<select id="e-produto" name="produto">
-          <option>Chaveiro com logo</option><option>Porta-crachá / clipe com logo</option><option>Marcador de página com logo</option><option>Placa de mesa com nome e cargo</option><option>Suporte de celular com logo</option><option>Lembrancinha para evento (descrever)</option><option>Outro (descrever)</option>
+          <option>Chaveiro com logo</option><option>Pá de ração chaveiro (pet shop)</option><option>Suporte de celular cachorro (pet shop)</option><option>Porta-crachá / clipe com logo</option><option>Marcador de página com logo</option><option>Placa de mesa com nome e cargo</option><option>Suporte de celular com logo</option><option>Lembrancinha para evento (descrever)</option><option>Outro (descrever)</option>
         </select></label>
         <div class="row2">
           <label>Quantidade<input id="e-qtd" name="qtd" type="number" min="1" placeholder="50" required></label>
